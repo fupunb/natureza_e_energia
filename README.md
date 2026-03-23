@@ -1,2 +1,2 @@
-# natureza_e_energia
+# Natureza e Energia
 Repo da disciplina Natureza e Energia
