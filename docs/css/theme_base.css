@@ -22,11 +22,11 @@ body {
     radial-gradient(circle at 50% 80%, rgba(255, 208, 114, 0.08), transparent 26%),
     linear-gradient(135deg, #110f0f 0%, #1a1311 50%, #130f12 100%);
   color: var(--text);
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Commissioner", sans-serif;
 }
 
 .reveal {
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Commissioner", sans-serif;
   color: var(--text);
   font-size: 140%;
 }
@@ -109,6 +109,10 @@ h2 {
   max-width: 11em;
 }
 
+.aula-ciencia .wide-title {
+  max-width: 16em;
+}
+
 h3 {
   margin: 0 0 0.25em;
   font-size: 1.15em;
@@ -116,7 +120,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--teal);
-  font-family: "Noto Sans Display", sans-serif;
+  font-family: "Commissioner", sans-serif;
   font-weight: 400;
 }
 
@@ -840,6 +844,7 @@ strong {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 16px;
 }
 
 .aula-ciencia .mini-chip {
@@ -1159,6 +1164,7 @@ strong {
 }
 
 @media (max-width: 1100px) {
+
   .aula-ciencia .image-grid,
   .aula-ciencia .claim-grid,
   .aula-ciencia .three-ideas,
