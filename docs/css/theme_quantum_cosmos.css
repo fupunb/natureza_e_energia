@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
 
 :root {
   /* Colors - Void (Backgrounds) */
   --void-deep: #050508;
-  --void-base: #0B0C10;
-  --void-surface: #14161C;
-  --void-elevated: #1F232B;
+  --void-base: #0b0c10;
+  --void-surface: #14161c;
+  --void-elevated: #1f232b;
 
   /* Colors - Starlight (Text) */
-  --star-bright: #F0F6FC;
-  --star-base: #C9D1D9;
-  --star-dim: #8B949E;
-  
+  --star-bright: #f0f6fc;
+  --star-base: #c9d1d9;
+  --star-dim: #8b949e;
+
   /* Colors - Neon (Accents) */
-  --neon-cyan: #00F0FF;
+  --neon-cyan: #00f0ff;
   --neon-cyan-dim: rgba(0, 240, 255, 0.15);
-  --neon-magenta: #FF007F;
+  --neon-magenta: #ff007f;
   --neon-magenta-dim: rgba(255, 0, 127, 0.15);
-  --neon-violet: #8A2BE2;
+  --neon-violet: #8a2be2;
   --neon-violet-dim: rgba(138, 43, 226, 0.15);
 
   /* Borders & Shadows */
@@ -30,7 +30,7 @@
   /* Typography */
   --heading-font: "Outfit", system-ui, sans-serif;
   --body-font: "Inter", system-ui, sans-serif;
-  
+
   --body-size: 14pt;
   --lead-size: 16pt;
   --h1-size: 36pt;
@@ -48,8 +48,17 @@ body,
   color: var(--star-base);
   font-family: var(--body-font);
   /* Deep space radial glow behind everything */
-  background-image: radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
-                    radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08) 0%, transparent 50%);
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(138, 43, 226, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(0, 240, 255, 0.08) 0%,
+      transparent 50%
+    );
 }
 
 .reveal {
@@ -108,7 +117,7 @@ body,
   padding: 40px 48px;
   background: var(--void-base);
   /* A subtle grid to give a tech/cosmos vibe */
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -124,7 +133,12 @@ body,
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet), var(--neon-magenta));
+  background: linear-gradient(
+    90deg,
+    var(--neon-cyan),
+    var(--neon-violet),
+    var(--neon-magenta)
+  );
   opacity: 0.7;
   z-index: 100;
   pointer-events: none;
@@ -216,7 +230,7 @@ body,
 
 .reveal h1 {
   font-size: var(--h1-size);
-  text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .reveal h2 {
@@ -272,8 +286,13 @@ body,
    ===================================================== */
 
 .deck-slide--manifesto {
-  background: radial-gradient(circle at 70% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 60%),
-              var(--void-base);
+  background:
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(138, 43, 226, 0.15) 0%,
+      transparent 60%
+    ),
+    var(--void-base);
 }
 
 .deck-slide--manifesto .eyebrow {
@@ -296,7 +315,7 @@ body,
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -308,7 +327,11 @@ body,
   right: -1px;
   width: 60px;
   height: 60px;
-  background: radial-gradient(circle at right top, var(--neon-magenta), transparent 70%);
+  background: radial-gradient(
+    circle at right top,
+    var(--neon-magenta),
+    transparent 70%
+  );
   opacity: 0.4;
 }
 
@@ -354,14 +377,18 @@ body,
   border: 1px solid var(--glass-border);
   border-radius: 8px;
   padding: 24px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Hover effects for interactive feel */
 .panel:hover,
 .comparison-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.4), 0 0 20px rgba(0, 240, 255, 0.05);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 240, 255, 0.05);
   border-color: var(--glass-border-strong);
 }
 
@@ -382,7 +409,11 @@ body,
   gap: 8px;
   text-align: center;
   border-top: 3px solid var(--neon-cyan);
-  background: linear-gradient(180deg, rgba(0, 240, 255, 0.05), var(--glass-bg) 60%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 240, 255, 0.05),
+    var(--glass-bg) 60%
+  );
 }
 
 .metric-label {
@@ -400,7 +431,7 @@ body,
   font-weight: 700;
   font-size: 28pt;
   line-height: 1;
-  text-shadow: 0 0 20px rgba(255,255,255,0.2);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .comparison-card {
@@ -519,11 +550,15 @@ body,
   border: 1px solid var(--glass-border);
   border-left: 4px solid var(--neon-magenta);
   border-radius: 8px;
-  background: linear-gradient(90deg, var(--void-surface) 0%, rgba(20, 22, 28, 0.2) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--void-surface) 0%,
+    rgba(20, 22, 28, 0.2) 100%
+  );
   color: var(--star-bright);
   font-size: 16pt;
   line-height: 1.4;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .law-strip::before {
@@ -534,7 +569,7 @@ body,
   transform: translateY(-50%);
   color: var(--neon-magenta);
   font-size: 24pt;
-  text-shadow: 0 0 10px rgba(255,0,127,0.5);
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
 }
 
 .law-strip--signal {
@@ -635,20 +670,20 @@ body,
 }
 
 .reveal ul.clean li {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 0 0 14px;
-  padding-left: 28px;
+  padding-left: 0;
 }
 
 .reveal ul.clean li::before {
-  content: "▹";
-  position: absolute;
-  top: 0.1em;
-  left: 0;
+  content: "➠";
+  flex-shrink: 0;
   color: var(--neon-cyan);
   font-size: 1.2em;
   font-family: var(--heading-font);
-  text-shadow: 0 0 8px rgba(0,240,255,0.4);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
 
 /* =====================================================
@@ -661,7 +696,7 @@ body,
   border-radius: 8px;
   background: var(--void-deep);
   border: 1px solid var(--glass-border);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 .media-card img {
@@ -669,7 +704,9 @@ body,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
   opacity: 0.85;
 }
 
@@ -700,9 +737,15 @@ body,
    ===================================================== */
 
 @keyframes cosmicFloat {
-  0% { transform: translateY(0px) }
-  50% { transform: translateY(-8px) }
-  100% { transform: translateY(0px) }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .float-anim {
@@ -735,8 +778,12 @@ body,
   .process-step:nth-child(2n) {
     transform: none;
   }
-  .reveal h1 { font-size: 28pt; }
-  .reveal h2 { font-size: 22pt; }
+  .reveal h1 {
+    font-size: 28pt;
+  }
+  .reveal h2 {
+    font-size: 22pt;
+  }
 }
 
 @media (max-width: 860px) {
