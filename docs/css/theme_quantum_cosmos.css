@@ -820,7 +820,9 @@ body,
     font-size: 24pt;
   }
   .media-card:not(.media-card--avatar) {
-    height: 250px !important;
-    max-height: 250px;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    max-width: 50%;
+    margin: 0 auto;
   }
 }
