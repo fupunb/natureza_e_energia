@@ -1,0 +1,573 @@
+import sys
+
+html_content = r"""
+      <!-- Slide 1 -->
+      <section id="slide-1" class="deck-slide hero">
+        <div class="slide-inner">
+          <div class="hero-grid">
+            <div>
+              <h1 style="font-size: 3.5em;">A história da cinemática</h1>
+              <h2 style="font-size: 1.8em; color: var(--magenta); margin-top: 20px;">De Aristóteles a Newton</h2>
+              <p class="lead" style="margin-top: 30px;">Como a humanidade aprendeu a descrever o movimento</p>
+            </div>
+            <div class="panel accent-cyan">
+              <ul class="clean">
+                <li>Do senso comum à matemática</li>
+                <li>Da queda dos corpos às leis do movimento</li>
+                <li>Uma história de erros brilhantes, experimentos e revoluções conceituais</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Abra com impacto. Diga que hoje os alunos conhecem expressões como velocidade, aceleração e trajetória como se fossem naturais, mas durante quase dois mil anos essas ideias estavam longe de ser claras.
+            A aula não será apenas sobre “quem descobriu o quê”, mas sobre como certas perguntas mudaram a maneira de pensar a natureza.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 2 -->
+      <section id="slide-2" class="deck-slide">
+        <div class="slide-inner">
+          <h2>O movimento parece simples. Mas é?</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <ul class="clean">
+                <li>Uma bola rola e para.</li>
+                <li>Uma pedra cai.</li>
+                <li>Uma flecha continua após sair do arco.</li>
+                <li>A Lua não cai sobre a Terra.</li>
+              </ul>
+            </div>
+            <div class="panel accent-magenta">
+              <h3>Pergunta:</h3>
+              <p>Existe uma única explicação para todos esses movimentos?</p>
+            </div>
+          </div>
+          <aside class="notes">
+            Comece com fenômenos familiares. Mostre que o movimento parecia óbvio, mas não era.<br>
+            O problema é que nossa experiência cotidiana é dominada por atrito, resistência do ar e observações limitadas.<br>
+            Explique que a história da cinemática é, em grande parte, a história de libertar o pensamento do engano do senso comum.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 3 -->
+      <section id="slide-3" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Antes de Galileu</div>
+          <h2>Aristóteles: o primeiro grande sistema sobre o movimento</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <h3 style="color: var(--cyan);">Movimento Natural</h3>
+              <ul class="clean">
+                <li>Corpos pesados tendem para baixo</li>
+                <li>Corpos leves tendem para cima</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3 style="color: var(--magenta);">Movimento Violento</h3>
+              <ul class="clean">
+                <li>Exige agente externo</li>
+                <li>O repouso era visto como o estado “natural” de muitos corpos</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Explique com justiça: Aristóteles não era “ingênuo”. Seu sistema era coerente com a experiência cotidiana.<br>
+            Se empurramos algo e paramos de empurrar, ele para. Então parecia razoável pensar que o movimento exige causa contínua.<br>
+            Mostre que sua física estava ligada a uma visão mais ampla do cosmos, em que cada elemento tinha seu “lugar natural”.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 4 -->
+      <section id="slide-4" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A força da visão aristotélica</div>
+          <h2>Por que Aristóteles convenceu durante séculos?</h2>
+          <div class="panel accent-cyan">
+            <ul class="clean">
+              <li>A teoria parecia compatível com a experiência</li>
+              <li>Não havia instrumentos de medição precisos</li>
+              <li>O atrito mascarava o problema</li>
+              <li>A filosofia aristotélica era intelectualmente poderosa</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Insista neste ponto: a permanência de Aristóteles não foi mero atraso.<br>
+            Ela mostra que boas teorias podem durar muito quando explicam razoavelmente o que vemos.<br>
+            Esse slide é importante para evitar o erro didático de retratar a história como desfile de tolices até o “gênio salvador”.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section id="slide-5" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">O primeiro problema sério</div>
+          <h2>Se o movimento precisa de motor, por que a flecha continua?</h2>
+          <div class="panel accent-magenta">
+            <ul class="clean">
+              <li>A flecha segue mesmo depois de deixar o arco.</li>
+              <li>Aristóteles propôs que o meio ajudaria a mantê-la em movimento.</li>
+              <li>Mas essa explicação parecia cada vez mais insatisfatória.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Use este slide como ponto dramático.<br>
+            Faça a turma pensar: se o arqueiro já não toca mais a flecha, quem a empurra?<br>
+            É aqui que aparece uma rachadura importante no sistema aristotélico.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 6 -->
+      <section id="slide-6" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A crítica inicial</div>
+          <h2>Filopono: o meio não pode ser o motor do projétil</h2>
+          <div class="panel">
+            <ul class="clean">
+              <li>Criticou a explicação aristotélica.</li>
+              <li>Defendeu que algo é “impresso” ao corpo lançado.</li>
+              <li>Primeiro passo importante contra a física antiga.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Diga que João Filopono é pouco lembrado, mas importante.<br>
+            Ele começa a desmontar a ideia de que o ar empurra o projétil.<br>
+            Ainda não é a física moderna, mas já é uma ruptura decisiva: o movimento passa a ser pensado como algo que o corpo pode carregar consigo.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section id="slide-7" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Jean Buridan</div>
+          <h2>A teoria do <em>impetus</em></h2>
+          <div class="grid-2">
+            <div class="panel accent-cyan">
+              <ul class="clean">
+                <li>O lançador transmite um <em>impetus</em> ao corpo.</li>
+                <li>Esse impetus mantém o movimento.</li>
+                <li>O ar e a resistência o reduzem com o tempo.</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <div class="quote-block">
+                Não é inércia ainda, mas é um avanço enorme.
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Explique com cuidado: a teoria do impetus não é idêntica à inércia newtoniana.<br>
+            Mas ela já elimina a necessidade de um motor contínuo externo.<br>
+            É uma ponte conceitual importantíssima entre Aristóteles e Galileu.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 8 -->
+      <section id="slide-8" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Nicole Oresme</div>
+          <h2>Velocidade pode ser representada</h2>
+          <div class="panel accent-magenta">
+            <ul class="clean">
+              <li>Tentativas de representar variações de velocidade.</li>
+              <li>Ideias que lembram gráficos modernos.</li>
+              <li>Um passo rumo à matematização do movimento.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Aqui vale mostrar aos alunos que Galileu não surgiu do nada.<br>
+            A noção de representar quantitativamente o movimento já vinha amadurecendo.<br>
+            Oresme é importante porque sugere a passagem da descrição puramente verbal para a descrição geométrica e quantitativa.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 9 -->
+      <section id="slide-9" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A Revolução Científica</div>
+          <h2>Uma mudança de atitude: observar, idealizar, medir, matematizar</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <ul class="clean">
+                <li>Menos apelo à autoridade.</li>
+                <li>Mais atenção à medida e ao experimento.</li>
+              </ul>
+            </div>
+            <div class="panel accent-cyan">
+              <ul class="clean">
+                <li>A matemática passa a descrever a natureza.</li>
+                <li>Surge uma nova física.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Este slide faz a transição para a Revolução Científica.<br>
+            Explique que a mudança não foi só em resultados, mas em método.<br>
+            O mundo deixa de ser explicado apenas por qualidades e finalidades; passa a ser descrito por relações quantitativas.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 10 -->
+      <section id="slide-10" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Galileu entra em cena</div>
+          <h2>O movimento vira problema matemático</h2>
+          <div class="panel accent-magenta">
+            <ul class="clean">
+              <li>Investigou a queda dos corpos.</li>
+              <li>Estudou planos inclinados.</li>
+              <li>Analisou projéteis.</li>
+              <li>Defendeu a matematização da natureza.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Apresente Galileu como grande ponto de virada da aula.<br>
+            Ele não apenas faz experiments; ele idealiza situações, controla variáveis e procura relações matemáticas.<br>
+            Diga que, com Galileu, a cinemática começa a ganhar sua forma moderna.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 11 -->
+      <section id="slide-11" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A queda dos corpos</div>
+          <h2>Galileu contra o senso comum: corpos caem mais rápido?</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <p><strong>Aristóteles:</strong> corpos mais pesados tenderiam a cair mais rápido.</p>
+            </div>
+            <div class="panel accent-cyan">
+              <ul class="clean">
+                <li>Galileu questiona essa ideia.</li>
+                <li>Em condições ideais, a queda não depende da massa.</li>
+                <li>O problema real era separar o fenômeno do efeito do ar.</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Aqui você pode fazer uma pequena dramatização: "Se um corpo de 10 kg cai mais rápido que um de 1 kg, o que acontece se eu os prender juntos?"<br>
+            Use esse raciocínio para mostrar a genialidade de Galileu ao expor incoerências.<br>
+            Enfatize que o obstáculo histórico não era estupidez, mas a ausência de condições experimentais ideais.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 12 -->
+      <section id="slide-12" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Plano inclinado</div>
+          <h2>Desacelerando a queda para entendê-la</h2>
+          <div class="panel">
+            <ul class="clean">
+              <li>Queda livre era rápida demais para medir.</li>
+              <li>O plano inclinado “retarda” o fenômeno.</li>
+              <li>Permite comparar tempos e distâncias.</li>
+              <li>Nasce o estudo do movimento uniformemente acelerado.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Explique a ideia metodológica mais profunda:<br>
+            Galileu modifica o experimento para tornar o fenômeno acessível à medida.<br>
+            Isso é ciência moderna em estado puro: não apenas observar, mas construir condições de inteligibilidade.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 13 -->
+      <section id="slide-13" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A grande descoberta cinemática</div>
+          <h2>No movimento uniformemente acelerado...</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <ul class="clean">
+                <li>A velocidade varia uniformemente com o tempo.</li>
+                <li>A distância cresce mais rapidamente que o tempo.</li>
+              </ul>
+            </div>
+            <div class="panel accent-magenta">
+              <h3>Em linguagem moderna:</h3>
+              <div class="eq-plate">v ∝ t</div><br>
+              <div class="eq-plate" style="margin-top: 10px;">s ∝ t²</div>
+            </div>
+          </div>
+          <aside class="notes">
+            Aqui você pode ligar explicitamente com a cinemática ensinada hoje.<br>
+            Mostre que essas relações, agora tão familiares, foram uma conquista histórica enorme.<br>
+            Não transforme o slide em lousa cheia de equações; o foco é a ideia conceitual.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 14 -->
+      <section id="slide-14" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A composição dos movimentos</div>
+          <h2 style="font-size: 2.2em;">O projétil não “vai e depois cai”: ele faz as duas coisas ao mesmo tempo</h2>
+          <div class="grid-2">
+            <div class="panel accent-cyan">
+              <ul class="clean">
+                <li><strong>Movimento horizontal:</strong> aproximadamente uniforme.</li>
+                <li><strong>Movimento vertical:</strong> uniformemente acelerado.</li>
+              </ul>
+            </div>
+            <div class="metric-card">
+              <div class="metric-label">Resultado</div>
+              <div class="metric-value" style="font-size: 1.5em; text-transform: uppercase;">Trajetória Parabólica</div>
+            </div>
+          </div>
+          <aside class="notes">
+            Este é um dos momentos mais bonitos da aula.<br>
+            Mostre que Galileu entende o projétil como composição de dois movimentos independentes.<br>
+            Isso destrói a visão antiga de movimento misto mal definido e inaugura uma linguagem muito poderosa.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 15 -->
+      <section id="slide-15" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A ideia de inércia aparece</div>
+          <h2>Talvez o problema não seja: “o que mantém o movimento?”</h2>
+          <div class="panel">
+            <ul class="clean">
+              <li>Talvez o movimento não precise ser continuamente sustentado.</li>
+              <li>Sem resistência, um corpo tenderia a conservar seu estado.</li>
+              <li>O repouso deixa de ser o único estado privilegiado.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Faça aqui uma pausa filosófica. Essa mudança é gigantesca.<br>
+            Durante séculos a pergunta central foi: “quem empurra?”.<br>
+            Com Galileu e depois Newton, a pergunta muda: “o que altera um movimento que já continua por si?”.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 16 -->
+      <section id="slide-16" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">O caminho até Newton</div>
+          <h2>Entre Galileu e Newton, a mecânica continua amadurecendo</h2>
+          <div class="panel accent-magenta">
+            <ul class="clean">
+              <li><strong>Kepler:</strong> regularidades matemáticas nos céus.</li>
+              <li><strong>Descartes:</strong> formulações importantes sobre conservação do movimento.</li>
+              <li><strong>Huygens:</strong> avanços no movimento circular e aceleração centrípeta.</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Não fique muito tempo aqui, mas use o slide para evitar a falsa impressão de salto direto Galileu → Newton.<br>
+            Kepler reforça a ideia de que a natureza obedece relações matemáticas.<br>
+            Huygens será especialmente útil se você quiser sugerir a ampliação futura da aula para dinâmica e gravitação.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 17 -->
+      <section id="slide-17" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">A síntese</div>
+          <h2>Newton: a grande unificação do movimento</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <ul class="clean">
+                <li>Lei da inércia.</li>
+                <li>Relação entre força e mudança de movimento.</li>
+                <li>Ação e reação.</li>
+              </ul>
+            </div>
+            <div class="panel accent-cyan">
+              <p>A mesma física vale na Terra e no céu.</p>
+            </div>
+          </div>
+          <aside class="notes">
+            Mostre que Newton não “apenas inventou fórmulas”; ele reorganizou a física inteira.<br>
+            O que antes eram fenômenos separados passa a ser visto dentro de um quadro unificado.<br>
+            A cinemática ganha fundamento robusto quando integrada à dinâmica.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 18 -->
+      <section id="slide-18" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Primeira lei: uma revolução conceitual</div>
+          <h2 style="font-size: 2.2em;">Lei da inércia: o movimento retilíneo uniforme é tão natural quanto o repouso</h2>
+          <div class="panel accent-magenta">
+            <div class="quote-block">
+              Um corpo mantém seu estado de repouso ou de movimento retilíneo uniforme... a menos que uma força resultante o altere.
+            </div>
+          </div>
+          <aside class="notes">
+            Diga claramente: esse foi um dos maiores choques contra o senso comum da história da ciência.<br>
+            A força deixa de ser aquilo que “mantém” o movimento; passa a ser aquilo que muda o movimento.<br>
+            Essa diferença, simples para nós, foi revolucionária.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 19 -->
+      <section id="slide-19" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">O que mudou de Aristóteles para Newton?</div>
+          <h2>A grande virada histórica</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <h3 style="color: var(--cyan); margin-bottom: 10px;">Aristóteles</h3>
+              <ul class="clean">
+                <li>Movimento natural e violento</li>
+                <li>Repouso privilegiado</li>
+                <li>Explicações qualitativas</li>
+              </ul>
+            </div>
+            <div class="panel accent-magenta">
+              <h3 style="color: var(--magenta); margin-bottom: 10px;">Newton</h3>
+              <ul class="clean">
+                <li>Inércia</li>
+                <li>Movimento descrito matematicamente</li>
+                <li>Leis universais</li>
+              </ul>
+            </div>
+          </div>
+          <aside class="notes">
+            Este slide é de síntese comparativa. É importante para consolidar a aula.<br>
+            Se quiser, faça uma tabela verbalmente, mas mantenha o slide limpo.<br>
+            O objetivo é que os alunos percebam a profundidade da transformação, não apenas a troca de nomes.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 20 -->
+      <section id="slide-20" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">O que a história da cinemática ensina sobre ciência?</div>
+          <h2>A ciência avança corrigindo o que parece óbvio</h2>
+          <div class="panel">
+            <ul class="clean">
+              <li>O senso comum pode enganar</li>
+              <li>Boas perguntas mudam tudo</li>
+              <li>Medir é diferente de apenas observar</li>
+              <li>A matemática revelou estruturas invisíveis da natureza</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Este é um ótimo slide para fechamento conceitual.<br>
+            Aproveite para mostrar que a ciência não progride em linha reta.<br>
+            Ela avança por conflitos entre experiência, teoria, linguagem matemática e experimentação.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 21 -->
+      <section id="slide-21" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Perguntas provocadoras para discussão</div>
+          <h2>Questões para pensar</h2>
+          <div class="panel accent-cyan">
+            <ul class="clean">
+              <li>Se vivêssemos num mundo sem atrito, Aristóteles pareceria plausível?</li>
+              <li>Galileu “viu” a verdade ou construiu uma nova forma de vê-la?</li>
+              <li>A matemática descreve a natureza ou a natureza é moldada por nossas idealizações?</li>
+              <li>O que ainda hoje parece “óbvio”, mas pode estar errado?</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Este slide serve para debate final ou avaliação formativa.<br>
+            As perguntas não são só históricas; elas abrem espaço para epistemologia da ciência.<br>
+            Muito bom para turmas mais reflexivas.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 22 -->
+      <section id="slide-22" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Experimento demonstrativo para a aula</div>
+          <h2>Experimento simples: desmontando o senso comum</h2>
+          <div class="panel">
+            <ul class="clean">
+              <li>Soltar dois objetos de massas diferentes</li>
+              <li>Lançamento horizontal de uma bola</li>
+              <li>Carrinho em trilho / superfície de baixo atrito</li>
+              <li>Vídeo em câmera lenta para observar trajetórias</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Excelente slide para conectar história e prática.<br>
+            Mostre que os dilemas históricos podem ser revividos em sala.<br>
+            Você pode dizer: “vamos refazer mentalmente o caminho da física”.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 23 -->
+      <section id="slide-23" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Linha do tempo final</div>
+          <h2>Linha do tempo da cinemática</h2>
+          <div class="process-step" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div><strong style="color: var(--cyan)">Aristóteles:</strong> sistema qualitativo</div>
+            <div><strong style="color: var(--cyan)">Filopono:</strong> crítica aos projéteis</div>
+            <div><strong style="color: var(--magenta)">Buridan:</strong> impetus</div>
+            <div><strong style="color: var(--magenta)">Oresme:</strong> representação de variações</div>
+            <div><strong style="color: var(--cyan)">Galileu:</strong> queda, inércia, projéteis</div>
+            <div><strong style="color: var(--magenta)">Newton:</strong> síntese das leis</div>
+          </div>
+          <aside class="notes">
+            Use este slide como fechamento cronológico.<br>
+            Depois de toda a narrativa conceitual, a linha do tempo ajuda os alunos a organizar os nomes.
+          </aside>
+        </div>
+      </section>
+
+      <!-- Slide 24 -->
+      <section id="slide-24" class="deck-slide">
+        <div class="slide-inner">
+          <div class="eyebrow">Encerramento</div>
+          <h2>Da pergunta “quem empurra?” à lei da inércia</h2>
+          <div class="panel accent-cyan">
+            <p style="margin-bottom: 15px;">A história da cinemática é a história de uma transformação profunda:</p>
+            <ul class="clean">
+              <li>Do qualitativo ao quantitativo</li>
+              <li>Do senso comum ao experimento controlado</li>
+              <li>Da autoridade à matematização</li>
+              <li>Do movimento como problema filosófico ao movimento como lei da natureza</li>
+            </ul>
+          </div>
+          <aside class="notes">
+            Feche com força.<br>
+            Diga que estudar a história da cinemática não é adorno cultural: é uma maneira poderosa de entender por que as ideias da mecânica clássica são tão profundas.
+          </aside>
+        </div>
+      </section>
+"""
+
+with open("docs/historia_da_fisica/index.html", "r", encoding="utf-8") as f:
+    orig = f.read()
+
+start_marker = '<div class="slides">'
+end_marker = '</div>\n  </div>\n\n  <script'
+
+start_idx = orig.find(start_marker)
+end_idx = orig.find(end_marker)
+
+if start_idx == -1 or end_idx == -1:
+    print("Markers not found.")
+    sys.exit(1)
+
+new_content = orig[:start_idx + len(start_marker)] + "\n" + html_content + "\n    " + orig[end_idx:]
+
+with open("docs/historia_da_fisica/index.html", "w", encoding="utf-8") as f:
+    f.write(new_content)
+    
+print("Successfully replaced.")
