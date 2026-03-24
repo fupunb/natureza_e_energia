@@ -2,72 +2,103 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="As Leis de Newton: uma reconstrução das intuições sobre força e movimento, abordando as três rupturas conceituais que mudaram a física para sempre.">
+    content="As Leis de Newton: uma reconstrução das intuições sobre força e movimento, abordando as três rupturas conceituais que mudaram a física para sempre." />
   <title>As Leis de Newton — Newton contra o que parece óbvio</title>
-  <link rel="icon" href="../icons/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+  <link rel="icon" href="../icons/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png" />
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Literata:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <!-- Reveal.js core -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
 
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Signal Ledger theme (shared) -->
-  <link rel="stylesheet" href="../css/theme_signal_ledger.css">
+  <link rel="stylesheet" href="../css/theme_signal_ledger.css" />
 
   <!-- KaTeX for math rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
-
       <!-- ================================================
            SLIDE 1 — CAPA / HERO
            ================================================ -->
       <section id="slide-capa" class="deck-slide deck-slide--manifesto hero" data-transition="fade">
-        <div class="slide-inner" style="grid-template-columns: 260px minmax(0,1fr); align-items: stretch;">
-          <div style="display:flex; flex-direction:column; justify-content:center; padding-right: 8px;">
+        <div class="slide-inner" style="
+              grid-template-columns: 260px minmax(0, 1fr);
+              align-items: stretch;
+            ">
+          <div style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 8px;
+              ">
             <div class="eyebrow">Física — Dinâmica</div>
-            <h1 style="font-size: 34pt; max-width: 5em; margin-top: 22px; color: var(--paper);">As Leis de Newton</h1>
-            <p class="kicker"
-              style="margin-top: 18px; font-size: 13pt; max-width: 22em; color: var(--fog); border-top-color: rgba(255,255,255,0.18);">
-              Newton contra o que parece óbvio — uma reconstrução das intuições erradas sobre força e movimento
+            <h1 style="
+                  font-size: 34pt;
+                  max-width: 5em;
+                  margin-top: 22px;
+                  color: var(--paper);
+                ">
+              As Leis de Newton
+            </h1>
+            <p class="kicker" style="
+                  margin-top: 18px;
+                  font-size: 13pt;
+                  max-width: 22em;
+                  color: var(--fog);
+                  border-top-color: rgba(255, 255, 255, 0.18);
+                ">
+              Newton contra o que parece óbvio — uma reconstrução das
+              intuições erradas sobre força e movimento
             </p>
           </div>
-          <div class="hero-panel" style="display: flex; flex-direction: column; justify-content: center; gap: 18px;">
-            <div class="hero-subtitle">Três grandes ilusões do senso comum</div>
-            <p style="color: rgba(242,237,227,0.88); margin-bottom: 6px;">
-              <strong style="color: var(--signal);">Ilusão 1 —</strong> Movimento exige força contínua
+          <div class="hero-panel" style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 18px;
+              ">
+            <div class="hero-subtitle">
+              Três grandes ilusões do senso comum
+            </div>
+            <p style="color: rgba(242, 237, 227, 0.88); margin-bottom: 6px">
+              <strong style="color: var(--signal)">Ilusão 1 —</strong>
+              Movimento exige força contínua
             </p>
-            <p style="color: rgba(242,237,227,0.88); margin-bottom: 6px;">
-              <strong style="color: var(--signal);">Ilusão 2 —</strong> Força produz velocidade
+            <p style="color: rgba(242, 237, 227, 0.88); margin-bottom: 6px">
+              <strong style="color: var(--signal)">Ilusão 2 —</strong> Força
+              produz velocidade
             </p>
-            <p style="color: rgba(242,237,227,0.88);">
-              <strong style="color: var(--signal);">Ilusão 3 —</strong> Força é unilateral
+            <p style="color: rgba(242, 237, 227, 0.88)">
+              <strong style="color: var(--signal)">Ilusão 3 —</strong> Força é
+              unilateral
             </p>
           </div>
         </div>
         <aside class="notes">
-          Abra com impacto. Explique que as três leis de Newton não são três frases para decorar — são a correção de
-          três ilusões profundas que o senso comum carrega até hoje.
-          A aula é organizada como um tribunal: Newton julgando crenças intuitivas.
-          Pergunte à turma: "Vocês acham que sabem o que força faz?"
+          Abra com impacto. Explique que as três leis de Newton não são três
+          frases para decorar — são a correção de três ilusões profundas que o
+          senso comum carrega até hoje. A aula é organizada como um tribunal:
+          Newton julgando crenças intuitivas. Pergunte à turma: "Vocês acham
+          que sabem o que força faz?"
         </aside>
       </section>
 
@@ -75,16 +106,38 @@
            SLIDE 2 — DIVISOR: O Grande Engano
            ================================================ -->
       <section id="slide-div1" class="deck-slide deck-slide--dark" data-transition="fade">
-        <div
-          style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-          <div class="eyebrow" style="background: var(--oxide);">Ato 1</div>
-          <h1 style="font-size: 42pt; color: var(--paper); max-width: 8em; line-height: 1; margin: 0;">O grande engano
+        <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+              min-height: 0;
+              text-align: center;
+              gap: 24px;
+            ">
+          <div class="eyebrow" style="background: var(--oxide)">Ato 1</div>
+          <h1 style="
+                font-size: 42pt;
+                color: var(--paper);
+                max-width: 8em;
+                line-height: 1;
+                margin: 0;
+              ">
+            O grande engano
           </h1>
-          <p style="color: var(--fog); font-size: 17pt; font-style: italic; max-width: 28em;">"Se não empurrar, para."
+          <p style="
+                color: var(--fog);
+                font-size: 17pt;
+                font-style: italic;
+                max-width: 28em;
+              ">
+            "Se não empurrar, para."
           </p>
         </div>
         <aside class="notes">
-          Divisor dramático. Diga: "Vamos começar pelo que parece óbvio — e que é exatamente a armadilha."
+          Divisor dramático. Diga: "Vamos começar pelo que parece óbvio — e
+          que é exatamente a armadilha."
         </aside>
       </section>
 
@@ -94,31 +147,52 @@
       <section id="slide-cotidiano" class="deck-slide" data-auto-animate>
         <div class="slide-inner">
           <div class="eyebrow">Intuição do senso comum</div>
-          <h2>Por que as<br>coisas param?</h2>
-          <div class="hero-grid" style="grid-template-columns: minmax(0,1fr) 340px;">
+          <h2>Por que as<br />coisas param?</h2>
+          <div class="hero-grid" style="grid-template-columns: minmax(0, 1fr) 340px">
             <div>
-              <p class="lead">A experiência cotidiana parece confirmar: sem empurrar, tudo para.</p>
-              <ul class="clean" style="margin-top: 18px;">
+              <p class="lead">
+                A experiência cotidiana parece confirmar: sem empurrar, tudo
+                para.
+              </p>
+              <ul class="clean" style="margin-top: 18px">
                 <li class="fragment fade-up">Uma bola rola e para.</li>
-                <li class="fragment fade-up">Um carrinho desacelera sozinho.</li>
-                <li class="fragment fade-up">Uma caixa só anda enquanto é empurrada.</li>
-                <li class="fragment fade-up">Uma bicicleta para se deixar de pedalar.</li>
+                <li class="fragment fade-up">
+                  Um carrinho desacelera sozinho.
+                </li>
+                <li class="fragment fade-up">
+                  Uma caixa só anda enquanto é empurrada.
+                </li>
+                <li class="fragment fade-up">
+                  Uma bicicleta para se deixar de pedalar.
+                </li>
               </ul>
-              <p class="fragment fade-up"
-                style="margin-top: 18px; color: var(--ink); font-weight: 600; font-size: 13pt;">
-                Conclusão intuitiva: <em>força é aquilo que mantém o movimento.</em>
+              <p class="fragment fade-up" style="
+                    margin-top: 18px;
+                    color: var(--ink);
+                    font-weight: 600;
+                    font-size: 13pt;
+                  ">
+                Conclusão intuitiva:
+                <em>força é aquilo que mantém o movimento.</em>
               </p>
             </div>
             <div>
-              <img src="images/inertia.jpg" alt="Objeto em movimento"
-                style="width:100%; border-radius:2px; opacity:0.82; object-fit:cover; max-height:300px;">
+              <img src="images/inertia.jpg" alt="Objeto em movimento" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.82;
+                    object-fit: cover;
+                    max-height: 300px;
+                  " />
             </div>
           </div>
         </div>
         <aside class="notes">
-          Deixe a turma concordar com esses exemplos. Construa a ilusão antes de destruí-la.
-          Explique que Aristóteles não era ingênuo — esse sistema parecia perfeitamente razoável por dois mil anos.
-          O atrito era invisível como causa: as coisas simplesmente paravam, e isso parecia natural.
+          Deixe a turma concordar com esses exemplos. Construa a ilusão antes
+          de destruí-la. Explique que Aristóteles não era ingênuo — esse
+          sistema parecia perfeitamente razoável por dois mil anos. O atrito
+          era invisível como causa: as coisas simplesmente paravam, e isso
+          parecia natural.
         </aside>
       </section>
 
@@ -137,25 +211,40 @@
                 <li>Todo movimento exige uma causa contínua</li>
                 <li>Sem força, sem movimento</li>
               </ul>
-              <p class="small" style="color: var(--oxide); margin-top: 10px; font-style: italic;">Esta visão durou ~2000
-                anos.</p>
+              <p class="small" style="
+                    color: var(--oxide);
+                    margin-top: 10px;
+                    font-style: italic;
+                  ">
+                Esta visão durou ~2000 anos.
+              </p>
             </div>
             <div class="comparison-card vitrea">
               <h3>Newton (ruptura conceitual)</h3>
               <ul class="clean">
                 <li>O movimento uniforme é tão natural quanto o repouso</li>
                 <li>Força não mantém — ela <em>muda</em> o estado</li>
-                <li>O que para os corpos é o <strong>atrito</strong>, não a ausência de força</li>
+                <li>
+                  O que para os corpos é o <strong>atrito</strong>, não a
+                  ausência de força
+                </li>
               </ul>
-              <p class="small" style="color: var(--signal); margin-top: 10px; font-style: italic;">Uma bomba conceitual.
+              <p class="small" style="
+                    color: var(--signal);
+                    margin-top: 10px;
+                    font-style: italic;
+                  ">
+                Uma bomba conceitual.
               </p>
             </div>
           </div>
         </div>
         <aside class="notes">
-          Insista: Aristóteles estava errado, mas cada erro fazia sentido dado o que se via no cotidiano.
-          O atrito mascarava tudo. Em ambientes com atrito, parecia óbvio que força sustenta o movimento.
-          Newton precisou de um ambiente idealizado — sem atrito — para ver a verdade.
+          Insista: Aristóteles estava errado, mas cada erro fazia sentido dado
+          o que se via no cotidiano. O atrito mascarava tudo. Em ambientes com
+          atrito, parecia óbvio que força sustenta o movimento. Newton
+          precisou de um ambiente idealizado — sem atrito — para ver a
+          verdade.
         </aside>
       </section>
 
@@ -166,25 +255,37 @@
         <div class="slide-inner">
           <div class="eyebrow">O vilão invisível</div>
           <h2>A ilusão criada pelo atrito</h2>
-          <div class="hero-grid" style="grid-template-columns: minmax(0,1fr) 300px;">
+          <div class="hero-grid" style="grid-template-columns: minmax(0, 1fr) 300px">
             <div>
-              <p class="lead">O atrito sempre esteve lá, mas durante séculos foi ignorado como causa do repouso.</p>
-              <p style="margin-top: 16px;">Se todo atrito desaparecesse, o que aconteceria com um carrinho já em
-                movimento?</p>
-              <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 15pt;">
-                Ele continuaria para sempre. Não porque nada o empurra — mas porque <strong>nada o freia.</strong>
+              <p class="lead">
+                O atrito sempre esteve lá, mas durante séculos foi ignorado
+                como causa do repouso.
+              </p>
+              <p style="margin-top: 16px">
+                Se todo atrito desaparecesse, o que aconteceria com um
+                carrinho já em movimento?
+              </p>
+              <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 15pt">
+                Ele continuaria para sempre. Não porque nada o empurra — mas
+                porque <strong>nada o freia.</strong>
               </div>
             </div>
             <div>
-              <img src="images/friction.jpg" alt="Superfície com atrito"
-                style="width:100%; border-radius:2px; opacity:0.82; object-fit:cover; max-height:290px;">
+              <img src="images/friction.jpg" alt="Superfície com atrito" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.82;
+                    object-fit: cover;
+                    max-height: 290px;
+                  " />
             </div>
           </div>
         </div>
         <aside class="notes">
-          Experimento mental: disco de hóquei no gelo — desliza muito mais longe do que uma caixa no chão.
-          Pergunta: por que o disco para eventualmente? Porque ainda há atrito, mesmo que pouco.
-          A ideia radical: em condições IDEAIS (sem atrito), ele NUNCA pararia.
+          Experimento mental: disco de hóquei no gelo — desliza muito mais
+          longe do que uma caixa no chão. Pergunta: por que o disco para
+          eventualmente? Porque ainda há atrito, mesmo que pouco. A ideia
+          radical: em condições IDEAIS (sem atrito), ele NUNCA pararia.
         </aside>
       </section>
 
@@ -192,18 +293,41 @@
            SLIDE 6 — DIVISOR: Primeira Lei
            ================================================ -->
       <section id="slide-div2" class="deck-slide deck-slide--dark" data-transition="fade">
-        <div
-          style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-          <div class="eyebrow" style="background: var(--signal); color: var(--ink);">1ª Lei</div>
-          <h1 style="font-size: 38pt; color: var(--paper); max-width: 10em; line-height: 1.05; margin: 0;">Lei da
-            Inércia</h1>
-          <p style="color: var(--fog); font-size: 16pt; font-style: italic; max-width: 32em;">
-            "Um corpo mantém seu estado de repouso ou de movimento retilíneo uniforme enquanto a força resultante sobre
-            ele for nula."
+        <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+              min-height: 0;
+              text-align: center;
+              gap: 24px;
+            ">
+          <div class="eyebrow" style="background: var(--signal); color: var(--ink)">
+            1ª Lei
+          </div>
+          <h1 style="
+                font-size: 38pt;
+                color: var(--paper);
+                max-width: 10em;
+                line-height: 1.05;
+                margin: 0;
+              ">
+            Lei da Inércia
+          </h1>
+          <p style="
+                color: var(--fog);
+                font-size: 16pt;
+                font-style: italic;
+                max-width: 32em;
+              ">
+            "Um corpo mantém seu estado de repouso ou de movimento retilíneo
+            uniforme enquanto a força resultante sobre ele for nula."
           </p>
         </div>
         <aside class="notes">
-          Divisor para a Primeira Lei. Leia o enunciado devagar. Pergunte: o que surpreende nessa frase?
+          Divisor para a Primeira Lei. Leia o enunciado devagar. Pergunte: o
+          que surpreende nessa frase?
         </aside>
       </section>
 
@@ -216,27 +340,39 @@
           <h2>Movimento não precisa de força para continuar</h2>
           <div class="grid-2">
             <div>
-              <p class="lead">A pergunta certa não é "o que mantém o movimento?" — é "o que <em>muda</em> o movimento?"
+              <p class="lead">
+                A pergunta certa não é "o que mantém o movimento?" — é "o que
+                <em>muda</em> o movimento?"
               </p>
-              <ul class="clean" style="margin-top: 16px;">
+              <ul class="clean" style="margin-top: 16px">
                 <li class="fragment fade-up">Disco de hóquei no gelo</li>
                 <li class="fragment fade-up">Puck em mesa de ar</li>
                 <li class="fragment fade-up">Nave espacial no vácuo</li>
-                <li class="fragment fade-up">Passageiro num ônibus que freia</li>
+                <li class="fragment fade-up">
+                  Passageiro num ônibus que freia
+                </li>
               </ul>
             </div>
             <div>
-              <img src="images/skating.jpg" alt="Patinação no gelo"
-                style="width:100%; border-radius:2px; opacity:0.85; object-fit:cover; max-height:280px;">
-              <p class="small" style="margin-top: 8px; color: var(--fog); font-style: italic;">No gelo, o atrito quase
-                desaparece — e a inércia aparece.</p>
+              <img src="images/skating.jpg" alt="Patinação no gelo" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.85;
+                    object-fit: cover;
+                    max-height: 280px;
+                  " />
+              <p class="small" style="margin-top: 8px; color: var(--fog); font-style: italic">
+                No gelo, o atrito quase desaparece — e a inércia aparece.
+              </p>
             </div>
           </div>
         </div>
         <aside class="notes">
-          O truque da toalha puxada rapidamente: a louca sobre a mesa continua quieta pela inércia.
-          O passageiro que avança quando o ônibus freia: não há nenhuma força empurrando-o — é sua inércia.
-          Pergunte: quem empurraria o passageiro para frente? Ninguém. É justamente a ausência de força sobre ele.
+          O truque da toalha puxada rapidamente: a louca sobre a mesa continua
+          quieta pela inércia. O passageiro que avança quando o ônibus freia:
+          não há nenhuma força empurrando-o — é sua inércia. Pergunte: quem
+          empurraria o passageiro para frente? Ninguém. É justamente a
+          ausência de força sobre ele.
         </aside>
       </section>
 
@@ -256,22 +392,30 @@
             <div class="process-step">
               <div class="step-index">Galileu</div>
               <h3>Transição</h3>
-              <p>Sem atrito, um corpo em movimento parece continuar. A inércia emerge.</p>
+              <p>
+                Sem atrito, um corpo em movimento parece continuar. A inércia
+                emerge.
+              </p>
             </div>
             <div class="process-step">
               <div class="step-index">Newton</div>
               <h3>Ruptura Total</h3>
-              <p>Repouso e MRU são igualmente naturais. A força só aparece para <em>mudar</em> esse estado.</p>
+              <p>
+                Repouso e MRU são igualmente naturais. A força só aparece para
+                <em>mudar</em> esse estado.
+              </p>
             </div>
           </div>
-          <div class="law-strip law-strip--signal" style="margin-top: 22px; font-size: 13.5pt;">
-            <strong>Inércia</strong> — a resistência de todo corpo a qualquer variação do seu estado de movimento.
+          <div class="law-strip law-strip--signal" style="margin-top: 22px; font-size: 13.5pt">
+            <strong>Inércia</strong> — a resistência de todo corpo a qualquer
+            variação do seu estado de movimento.
           </div>
         </div>
         <aside class="notes">
-          Essa progressão histórica é belíssima: em 2000 anos, a pergunta mudou completamente.
-          De "quem empurra para manter?" para "o que interfere para alterar?".
-          Isso é uma das maiores revoluções conceituais da história da ciência.
+          Essa progressão histórica é belíssima: em 2000 anos, a pergunta
+          mudou completamente. De "quem empurra para manter?" para "o que
+          interfere para alterar?". Isso é uma das maiores revoluções
+          conceituais da história da ciência.
         </aside>
       </section>
 
@@ -279,18 +423,41 @@
            SLIDE 9 — DIVISOR: Segunda Lei
            ================================================ -->
       <section id="slide-div3" class="deck-slide deck-slide--dark" data-transition="fade">
-        <div
-          style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-          <div class="eyebrow" style="background: var(--signal); color: var(--ink);">2ª Lei</div>
-          <h1 style="font-size: 38pt; color: var(--paper); max-width: 10em; line-height: 1.05; margin: 0;">Força e
-            Aceleração</h1>
-          <p style="color: var(--fog); font-size: 16pt; font-style: italic; max-width: 32em;">
-            "A força resultante sobre um corpo é igual ao produto de sua massa pela aceleração que nele produz."
+        <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+              min-height: 0;
+              text-align: center;
+              gap: 24px;
+            ">
+          <div class="eyebrow" style="background: var(--signal); color: var(--ink)">
+            2ª Lei
+          </div>
+          <h1 style="
+                font-size: 38pt;
+                color: var(--paper);
+                max-width: 10em;
+                line-height: 1.05;
+                margin: 0;
+              ">
+            Força e Aceleração
+          </h1>
+          <p style="
+                color: var(--fog);
+                font-size: 16pt;
+                font-style: italic;
+                max-width: 32em;
+              ">
+            "A força resultante sobre um corpo é igual ao produto de sua massa
+            pela aceleração que nele produz."
           </p>
         </div>
         <aside class="notes">
-          Divisor para a Segunda Lei. Antes de mostrar a fórmula, provoque: "Força produz velocidade, ou produz
-          aceleração? Há diferença?"
+          Divisor para a Segunda Lei. Antes de mostrar a fórmula, provoque:
+          "Força produz velocidade, ou produz aceleração? Há diferença?"
         </aside>
       </section>
 
@@ -301,31 +468,46 @@
         <div class="slide-inner">
           <div class="eyebrow">Ruptura 2</div>
           <h2>Força não produz velocidade — produz mudança de velocidade</h2>
-          <div class="hero-grid" style="grid-template-columns: minmax(0,1fr) 300px;">
+          <div class="hero-grid" style="grid-template-columns: minmax(0, 1fr) 300px">
             <div>
-              <p class="lead">O aluno pensa: mais força → mais rápido. Newton corrige: mais força → mais
-                <em>aceleração</em>.
+              <p class="lead">
+                O aluno pensa: mais força → mais rápido. Newton corrige: mais
+                força → mais <em>aceleração</em>.
               </p>
-              <p style="margin-top: 16px; font-weight: 600; color: var(--ink);">
+              <p style="margin-top: 16px; font-weight: 600; color: var(--ink)">
                 É possível ter velocidade alta com força resultante zero?
               </p>
-              <ul class="clean" style="margin-top: 10px;">
-                <li class="fragment fade-up">Carro em cruzeiro estabilizado (idealizado sem atrito)</li>
-                <li class="fragment fade-up">Disco deslizando sem atrito em velocidade constante</li>
-                <li class="fragment fade-up"><strong>Sim!</strong> Velocidade ≠ força. Aceleração = força.</li>
+              <ul class="clean" style="margin-top: 10px">
+                <li class="fragment fade-up">
+                  Carro em cruzeiro estabilizado (idealizado sem atrito)
+                </li>
+                <li class="fragment fade-up">
+                  Disco deslizando sem atrito em velocidade constante
+                </li>
+                <li class="fragment fade-up">
+                  <strong>Sim!</strong> Velocidade ≠ força. Aceleração =
+                  força.
+                </li>
               </ul>
             </div>
             <div>
-              <img src="images/aceleracao.webp" alt="Colisão e força"
-                style="width:100%;border-radius:2px;opacity:0.82;object-fit:cover;max-height:280px;">
+              <img src="images/aceleracao.webp" alt="Colisão e força" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.82;
+                    object-fit: cover;
+                    max-height: 280px;
+                  " />
             </div>
           </div>
         </div>
         <aside class="notes">
-          Essa pergunta — "é possível velocidade alta com força zero?" — derruba imediatamente a intuição aristotélica.
-          O aluno aristotélico diria "não, sem força não há movimento". Newton diz: forces só aparecem quando a
-          velocidade muda.
-          Carro em velocidade constante na estrada idealizada: motor equilibra o atrito, força resultante = zero.
+          Essa pergunta — "é possível velocidade alta com força zero?" —
+          derruba imediatamente a intuição aristotélica. O aluno aristotélico
+          diria "não, sem força não há movimento". Newton diz: forces só
+          aparecem quando a velocidade muda. Carro em velocidade constante na
+          estrada idealizada: motor equilibra o atrito, força resultante =
+          zero.
         </aside>
       </section>
 
@@ -336,38 +518,53 @@
         <div class="slide-inner">
           <div class="eyebrow">A equação da Segunda Lei</div>
           <h2>Massa: resistência à aceleração</h2>
-          <div class="grid-2" style="align-items: start;">
+          <div class="grid-2" style="align-items: start">
             <div>
               <div class="equation-plate">
-                <p style="font-size:22pt; letter-spacing: 0.04em;">F<sub>result.</sub> = m · a</p>
-                <p style="margin-top: 10px; font-size: 12pt;">
-                  <strong>F</strong> — força resultante (N) &nbsp;|&nbsp; <strong>m</strong> — massa (kg) &nbsp;|&nbsp;
+                <p style="font-size: 22pt; letter-spacing: 0.04em">
+                  F<sub>result.</sub> = m · a
+                </p>
+                <p style="margin-top: 10px; font-size: 12pt">
+                  <strong>F</strong> — força resultante (N) &nbsp;|&nbsp;
+                  <strong>m</strong> — massa (kg) &nbsp;|&nbsp;
                   <strong>a</strong> — aceleração (m/s²)
                 </p>
               </div>
-              <ul class="clean" style="margin-top: 18px;">
-                <li class="fragment fade-up">Mesma força → maior aceleração em corpo más leve</li>
-                <li class="fragment fade-up">Mesma massa → maior aceleração com maior força</li>
-                <li class="fragment fade-up">Massa mede a <em>resistência à mudança</em> — a inércia quantificada</li>
+              <ul class="clean" style="margin-top: 18px">
+                <li class="fragment fade-up">
+                  Mesma força → maior aceleração em corpo más leve
+                </li>
+                <li class="fragment fade-up">
+                  Mesma massa → maior aceleração com maior força
+                </li>
+                <li class="fragment fade-up">
+                  Massa mede a <em>resistência à mudança</em> — a inércia
+                  quantificada
+                </li>
               </ul>
             </div>
             <div>
-              <div class="metric-card" style="min-height: 120px;">
+              <div class="metric-card" style="min-height: 120px">
                 <div class="metric-label">Conceito central</div>
-                <div class="metric-value" style="font-size: 19pt; line-height: 1.1;">A força resultante gera aceleração,
-                  não velocidade.</div>
+                <div class="metric-value" style="font-size: 19pt; line-height: 1.1">
+                  A força resultante gera aceleração, não velocidade.
+                </div>
               </div>
-              <div class="panel" style="margin-top: 14px;">
+              <div class="panel" style="margin-top: 14px">
                 <h3>Experimento mental</h3>
-                <p>Empurre um carrinho vazio e um cheio com a mesma força. Qual acelera mais?</p>
+                <p>
+                  Empurre um carrinho vazio e um cheio com a mesma força. Qual
+                  acelera mais?
+                </p>
               </div>
             </div>
           </div>
         </div>
         <aside class="notes">
-          Só mostre a fórmula DEPOIS de construir o conceito. Nunca comece por ela.
-          A massa não é "tamanho" nem "peso": é resistência à aceleração. Isso é inércia quantificada.
-          Reforce: força zero → aceleração zero → velocidade constante (pode ser muito alta!).
+          Só mostre a fórmula DEPOIS de construir o conceito. Nunca comece por
+          ela. A massa não é "tamanho" nem "peso": é resistência à aceleração.
+          Isso é inércia quantificada. Reforce: força zero → aceleração zero →
+          velocidade constante (pode ser muito alta!).
         </aside>
       </section>
 
@@ -375,19 +572,42 @@
            SLIDE 12 — DIVISOR: Terceira Lei
            ================================================ -->
       <section id="slide-div4" class="deck-slide deck-slide--dark" data-transition="fade">
-        <div
-          style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-          <div class="eyebrow" style="background: var(--signal); color: var(--ink);">3ª Lei</div>
-          <h1 style="font-size: 38pt; color: var(--paper); max-width: 10em; line-height: 1.05; margin: 0;">Ação e Reação
+        <div style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+              min-height: 0;
+              text-align: center;
+              gap: 24px;
+            ">
+          <div class="eyebrow" style="background: var(--signal); color: var(--ink)">
+            3ª Lei
+          </div>
+          <h1 style="
+                font-size: 38pt;
+                color: var(--paper);
+                max-width: 10em;
+                line-height: 1.05;
+                margin: 0;
+              ">
+            Ação e Reação
           </h1>
-          <p style="color: var(--fog); font-size: 16pt; font-style: italic; max-width: 32em;">
-            "Para toda força que um corpo exerce sobre outro, este exerce sobre aquele uma força de mesma intensidade,
-            mesma direção e sentido contrário."
+          <p style="
+                color: var(--fog);
+                font-size: 16pt;
+                font-style: italic;
+                max-width: 32em;
+              ">
+            "Para toda força que um corpo exerce sobre outro, este exerce
+            sobre aquele uma força de mesma intensidade, mesma direção e
+            sentido contrário."
           </p>
         </div>
         <aside class="notes">
-          Divisor para a Terceira Lei. Antes de continuar: "Se você empurra uma parede, ela empurra você de volta? Com
-          que força?"
+          Divisor para a Terceira Lei. Antes de continuar: "Se você empurra
+          uma parede, ela empurra você de volta? Com que força?"
         </aside>
       </section>
 
@@ -398,10 +618,16 @@
         <div class="slide-inner">
           <div class="eyebrow">Ruptura 3</div>
           <h2>Não existe força isolada — interação é sempre mútua</h2>
-          <div class="hero-grid" style="grid-template-columns: minmax(0,1fr) 300px;">
+          <div class="hero-grid" style="grid-template-columns: minmax(0, 1fr) 300px">
             <div>
-              <p class="lead">Toda força nasce de uma interação entre dois corpos. Nunca existe uma só.</p>
-              <div class="process-row process-row-3" style="margin-top: 16px; grid-template-columns: repeat(3,1fr);">
+              <p class="lead">
+                Toda força nasce de uma interação entre dois corpos. Nunca
+                existe uma só.
+              </p>
+              <div class="process-row process-row-3" style="
+                    margin-top: 16px;
+                    grid-template-columns: repeat(3, 1fr);
+                  ">
                 <div class="process-step fragment fade-up">
                   <div class="step-index">Par 1</div>
                   <p>Pé ↔ Chão</p>
@@ -417,17 +643,23 @@
               </div>
             </div>
             <div>
-              <img src="images/rocket.webp" alt="Lançamento de foguete"
-                style="width:100%;border-radius:2px;opacity:0.85;object-fit:cover;max-height:290px;">
+              <img src="images/rocket.webp" alt="Lançamento de foguete" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.85;
+                    object-fit: cover;
+                    max-height: 290px;
+                  " />
             </div>
           </div>
         </div>
         <aside class="notes">
-          A beleza: quando a maçã cai em direção à Terra, a Terra também "sobe" em direção à maçã — com aceleração
-          imperceptível (massa enorme).
-          O foguete empurra os gases para trás; os gases empurram o foguete para frente. Não há "onde se apoiar" — a
-          interação cria as duas forças.
-          Peça para os alunos caminharem e perguntarem: quem está empurrando quem?
+          A beleza: quando a maçã cai em direção à Terra, a Terra também
+          "sobe" em direção à maçã — com aceleração imperceptível (massa
+          enorme). O foguete empurra os gases para trás; os gases empurram o
+          foguete para frente. Não há "onde se apoiar" — a interação cria as
+          duas forças. Peça para os alunos caminharem e perguntarem: quem está
+          empurrando quem?
         </aside>
       </section>
 
@@ -440,26 +672,38 @@
           <h2>Ação e reação se anulam?</h2>
           <div class="grid-2">
             <div class="comparison-card resinosa">
-              <h3><i class="fa-solid fa-xmark" style="color:var(--oxide);"></i> &nbsp;O erro comum</h3>
+              <h3>
+                <i class="fa-solid fa-xmark" style="color: var(--oxide)"></i>
+                &nbsp;O erro comum
+              </h3>
               <p>"A reação cancela a ação, então o corpo nunca se move."</p>
             </div>
             <div class="comparison-card vitrea">
-              <h3><i class="fa-solid fa-check" style="color:var(--signal);"></i> &nbsp;A verdade</h3>
-              <p>Ação e reação têm mesma intensidade e sentidos opostos — <strong>mas atuam em corpos
-                  diferentes.</strong><br>Não se cancelam no mesmo corpo.</p>
+              <h3>
+                <i class="fa-solid fa-check" style="color: var(--signal)"></i>
+                &nbsp;A verdade
+              </h3>
+              <p>
+                Ação e reação têm mesma intensidade e sentidos opostos —
+                <strong>mas atuam em corpos diferentes.</strong><br />Não se
+                cancelam no mesmo corpo.
+              </p>
             </div>
           </div>
-          <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 13pt;">
-            <strong>Por que a carroça anda?</strong> — O cavalo puxa a carroça; a carroça puxa o cavalo de volta.
-            Mas o chão empurra os cascos do cavalo para frente com mais força do que o atrito que trava as rodas da
-            carroça.
+          <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 13pt">
+            <strong>Por que a carroça anda?</strong> — O cavalo puxa a
+            carroça; a carroça puxa o cavalo de volta. Mas o chão empurra os
+            cascos do cavalo para frente com mais força do que o atrito que
+            trava as rodas da carroça.
           </div>
         </div>
         <aside class="notes">
-          Este slide resolve a maior dúvida sobre a 3ª lei.
-          As forças ação-reação NÃO atuam no mesmo corpo — portanto não somam para anular nada no mesmo sistema.
-          O exemplo cavalo-carroça: o par ação-reação cavalo-carroça é separado do par chão-cascos e rodas-chão.
-          Use visualmente: desenhe os diagramas de corpo livre de cada objeto separado.
+          Este slide resolve a maior dúvida sobre a 3ª lei. As forças
+          ação-reação NÃO atuam no mesmo corpo — portanto não somam para
+          anular nada no mesmo sistema. O exemplo cavalo-carroça: o par
+          ação-reação cavalo-carroça é separado do par chão-cascos e
+          rodas-chão. Use visualmente: desenhe os diagramas de corpo livre de
+          cada objeto separado.
         </aside>
       </section>
 
@@ -470,32 +714,49 @@
         <div class="slide-inner">
           <div class="eyebrow">3ª Lei — Exemplos cotidianos</div>
           <h2>Toda interação vem em pares</h2>
-          <div class="grid-2" style="align-items: start;">
+          <div class="grid-2" style="align-items: start">
             <div>
               <ul class="clean">
-                <li class="fragment fade-left"><strong>Martelo ↔ Prego</strong><br><span class="small">O martelo bate no
-                    prego; o prego resiste ao martelo.</span></li>
-                <li class="fragment fade-left" style="margin-top: 12px;"><strong>Pneu ↔ Estrada</strong><br><span
-                    class="small">O pneu empurra a estrada para trás; a estrada empurra o carro para frente.</span></li>
-                <li class="fragment fade-left" style="margin-top: 12px;"><strong>Terra ↔ Lua</strong><br><span
-                    class="small">A Terra atrai a Lua; a Lua atrai a Terra com a mesma força.</span></li>
-                <li class="fragment fade-left" style="margin-top: 12px;"><strong>Mão ↔ Mesa</strong><br><span
-                    class="small">Você empurra a mesa; a mesa empurra sua mão com igual força.</span></li>
+                <li class="fragment fade-left">
+                  <strong>Martelo ↔ Prego</strong><br /><span class="small">O martelo bate no prego; o prego resiste ao
+                    martelo.</span>
+                </li>
+                <li class="fragment fade-left" style="margin-top: 12px">
+                  <strong>Pneu ↔ Estrada</strong><br /><span class="small">O pneu empurra a estrada para trás; a estrada
+                    empurra o
+                    carro para frente.</span>
+                </li>
+                <li class="fragment fade-left" style="margin-top: 12px">
+                  <strong>Terra ↔ Lua</strong><br /><span class="small">A Terra atrai a Lua; a Lua atrai a Terra com a
+                    mesma
+                    força.</span>
+                </li>
+                <li class="fragment fade-left" style="margin-top: 12px">
+                  <strong>Mão ↔ Mesa</strong><br /><span class="small">Você empurra a mesa; a mesa empurra sua mão com
+                    igual
+                    força.</span>
+                </li>
               </ul>
             </div>
             <div>
-              <img src="images/action-reaction.jpg" alt="Colisão — bolas de bilhar"
-                style="width:100%;border-radius:2px;opacity:0.82;object-fit:cover;max-height:260px;">
-              <p class="small" style="margin-top: 8px; color: var(--fog); font-style: italic;">Colisão: cada bola exerce
-                força igual e oposta sobre a outra.</p>
+              <img src="images/action-reaction.jpg" alt="Colisão — bolas de bilhar" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.82;
+                    object-fit: cover;
+                    max-height: 260px;
+                  " />
+              <p class="small" style="margin-top: 8px; color: var(--fog); font-style: italic">
+                Colisão: cada bola exerce força igual e oposta sobre a outra.
+              </p>
             </div>
           </div>
         </div>
         <aside class="notes">
-          Deixe os alunos identificarem o par de forças em cada exemplo.
-          Peça que descrevam: quem exerce sobre quem? Qual é o par de ação-reação?
-          Atenção: normal e peso de um livro sobre a mesa NÃO são par de ação-reação. São forças de naturezas diferentes
-          no mesmo corpo!
+          Deixe os alunos identificarem o par de forças em cada exemplo. Peça
+          que descrevam: quem exerce sobre quem? Qual é o par de ação-reação?
+          Atenção: normal e peso de um livro sobre a mesa NÃO são par de
+          ação-reação. São forças de naturezas diferentes no mesmo corpo!
         </aside>
       </section>
 
@@ -506,32 +767,43 @@
         <div class="slide-inner">
           <div class="eyebrow">Síntese final</div>
           <h2>Newton julga três crenças intuitivas</h2>
-          <div class="grid-3" style="align-items: stretch;">
+          <div class="grid-3" style="align-items: stretch">
             <div class="panel fragment fade-up">
-              <h3 style="color: var(--oxide);">Crença 1</h3>
-              <p style="margin-bottom: 10px;">"Sem força, sem movimento."</p>
-              <p style="font-weight: 700; color: var(--oxide);">FALSO.</p>
-              <p class="small">Movimento uniforme não exige força — exige ausência de força resultante.</p>
+              <h3 style="color: var(--oxide)">Crença 1</h3>
+              <p style="margin-bottom: 10px">"Sem força, sem movimento."</p>
+              <p style="font-weight: 700; color: var(--oxide)">FALSO.</p>
+              <p class="small">
+                Movimento uniforme não exige força — exige ausência de força
+                resultante.
+              </p>
             </div>
             <div class="panel fragment fade-up">
-              <h3 style="color: var(--oxide);">Crença 2</h3>
-              <p style="margin-bottom: 10px;">"Força causa velocidade."</p>
-              <p style="font-weight: 700; color: var(--oxide);">INCOMPLETO.</p>
-              <p class="small">Força causa <em>aceleração</em>. Pode haver velocidade altíssima com força resultante
-                zero.</p>
+              <h3 style="color: var(--oxide)">Crença 2</h3>
+              <p style="margin-bottom: 10px">"Força causa velocidade."</p>
+              <p style="font-weight: 700; color: var(--oxide)">INCOMPLETO.</p>
+              <p class="small">
+                Força causa <em>aceleração</em>. Pode haver velocidade
+                altíssima com força resultante zero.
+              </p>
             </div>
             <div class="panel fragment fade-up">
-              <h3 style="color: var(--oxide);">Crença 3</h3>
-              <p style="margin-bottom: 10px;">"Quem é mais forte faz força; o outro só sofre."</p>
-              <p style="font-weight: 700; color: var(--oxide);">FALSO.</p>
-              <p class="small">Toda interação é mútua. A parede empurra você tanto quanto você a empurra.</p>
+              <h3 style="color: var(--oxide)">Crença 3</h3>
+              <p style="margin-bottom: 10px">
+                "Quem é mais forte faz força; o outro só sofre."
+              </p>
+              <p style="font-weight: 700; color: var(--oxide)">FALSO.</p>
+              <p class="small">
+                Toda interação é mútua. A parede empurra você tanto quanto
+                você a empurra.
+              </p>
             </div>
           </div>
         </div>
         <aside class="notes">
-          Slide de síntese poderoso. Use-o para consolidar toda a aula.
-          Peça aos alunos para, em duplas, explicarem cada veredito com as próprias palavras.
-          Esse "tribunal" torna o conteúdo memorável porque estrutura as três leis como respostas a perguntas genuínas.
+          Slide de síntese poderoso. Use-o para consolidar toda a aula. Peça
+          aos alunos para, em duplas, explicarem cada veredito com as próprias
+          palavras. Esse "tribunal" torna o conteúdo memorável porque
+          estrutura as três leis como respostas a perguntas genuínas.
         </aside>
       </section>
 
@@ -542,39 +814,53 @@
         <div class="slide-inner">
           <div class="eyebrow">Encerramento</div>
           <h2>As três leis como uma nova visão de mundo</h2>
-          <div class="grid-2" style="align-items: start;">
+          <div class="grid-2" style="align-items: start">
             <div>
               <div class="quote-panel">
-                <p class="quote-text">"Não há força sem interação, não há aceleração sem força, não há mudança de estado
-                  sem causa."</p>
-                <p class="small" style="color: var(--ink-soft);">— O programa completo da mecânica clássica em uma
-                  frase.</p>
+                <p class="quote-text">
+                  "Não há força sem interação, não há aceleração sem força,
+                  não há mudança de estado sem causa."
+                </p>
+                <p class="small" style="color: var(--ink-soft)">
+                  — O programa completo da mecânica clássica em uma frase.
+                </p>
               </div>
-              <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 13pt;">
-                <strong>1ª Lei</strong> — O que um corpo faz quando ninguém interfere: mantém seu estado.<br>
-                <strong>2ª Lei</strong> — Para que serve a força: mudar esse estado.<br>
-                <strong>3ª Lei</strong> — Pode uma força existir sozinha? Nunca.
+              <div class="law-strip law-strip--signal" style="margin-top: 18px; font-size: 13pt">
+                <strong>1ª Lei</strong> — O que um corpo faz quando ninguém
+                interfere: mantém seu estado.<br />
+                <strong>2ª Lei</strong> — Para que serve a força: mudar esse
+                estado.<br />
+                <strong>3ª Lei</strong> — Pode uma força existir sozinha?
+                Nunca.
               </div>
             </div>
             <div>
-              <img src="images/space.jpg" alt="Espaço e órbita"
-                style="width:100%;border-radius:2px;opacity:0.85;object-fit:cover;max-height:260px;">
-              <p class="small" style="margin-top:8px; color:var(--fog); font-style:italic;">No espaço, a inércia reina:
-                sem atrito, os satélites orbitam para sempre.</p>
+              <img src="images/space.jpg" alt="Espaço e órbita" style="
+                    width: 100%;
+                    border-radius: 2px;
+                    opacity: 0.85;
+                    object-fit: cover;
+                    max-height: 260px;
+                  " />
+              <p class="small" style="margin-top: 8px; color: var(--fog); font-style: italic">
+                No espaço, a inércia reina: sem atrito, os satélites orbitam
+                para sempre.
+              </p>
             </div>
           </div>
         </div>
         <aside class="notes">
-          Feche com força. Diga que as três leis não são regras arbitrárias: são a culminação de uma longa correção
-          histórica.
-          De Aristóteles a Galileu a Newton, levou 2000 anos para a humanidade parar de perguntar "o que move?" e
-          começar a perguntar "o que MUDA o movimento?".
-          Esse é o legado de Newton.
+          Feche com força. Diga que as três leis não são regras arbitrárias:
+          são a culminação de uma longa correção histórica. De Aristóteles a
+          Galileu a Newton, levou 2000 anos para a humanidade parar de
+          perguntar "o que move?" e começar a perguntar "o que MUDA o
+          movimento?". Esse é o legado de Newton.
         </aside>
       </section>
-
-    </div><!-- /.slides -->
-  </div><!-- /.reveal -->
+    </div>
+    <!-- /.slides -->
+  </div>
+  <!-- /.reveal -->
 
   <!-- Reveal.js scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.js"></script>
@@ -597,12 +883,19 @@
       touch: true,
       center: false,
       autoAnimate: true,
-      autoAnimateEasing: 'ease-in-out',
+      autoAnimateEasing: "ease-in-out",
       autoAnimateDuration: 0.7,
-      backgroundTransition: 'concave',
-      transition: 'concave',    // Transition between slides (default, fade, slide, convex, concave, zoom)
-      transitionSpeed: 'slow',    // Transition speed (default, fast, slow)      
-      plugins: [RevealZoom, RevealSearch, RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
+      backgroundTransition: "concave",
+      transition: "concave", // Transition between slides (default, fade, slide, convex, concave, zoom)
+      transitionSpeed: "slow", // Transition speed (default, fast, slow)
+      plugins: [
+        RevealZoom,
+        RevealSearch,
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealMath.KaTeX,
+      ],
     });
   </script>
 </body>

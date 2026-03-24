@@ -29,6 +29,9 @@
 
     <!-- Quantum Cosmos theme -->
     <link rel="stylesheet" href="../css/theme_quantum_cosmos.css">
+
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
 </head>
 
 <body>
@@ -40,18 +43,48 @@
             <section id="slide-capa" class="deck-slide deck-slide--manifesto hero" data-transition="fade"
                 style="background-image: url('images/quantum-physics-01.webp'); background-size: cover; background-position: center;">
                 <div class="slide-inner"
-                    style="grid-template-columns: minmax(0,1fr); padding: 40px; background: rgba(5, 5, 8, 0.85); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 0 40px rgba(0,240,255,0.2);">
-                    <div class="eyebrow">FUP0407: Mecânica Aplicada às Ciências</div>
-                    <h1
-                        style="font-size: 44pt; color: var(--paper); margin-top: 15px; margin-bottom: 25px; line-height: 1.1;">
-                        Movimento em Uma Dimensão</h1>
-                    <p class="lead" style="margin-top: 0;">Universidade de Brasília<br>Faculdade UnB Planaltina</p>
-                    <div style="margin-top: 30px; display: flex; align-items: center; gap: 15px;">
-                        <img src="https://gravatar.com/avatar/60d294c6125ae4f5859f4b229249ec06?size=500" alt="avatar"
-                            style="width: 70px; border-radius: 50%; border: 2px solid var(--neon-cyan);">
+                    style="grid-template-columns: 1fr; padding: 60px; background: rgba(5, 5, 8, 0.22); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 0 60px rgba(0,240,255,0.15); display: flex; flex-direction: column; justify-content: space-between;">
+
+                    <!-- Header Group (Left Aligned) -->
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 25px;">
+                        <div class="eyebrow" style="margin: 0;">FUP0407: Mecânica Aplicada às Ciências</div>
+
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <img src="../icons/unb.webp" alt="Logo UnB" style="width: 140px; height: auto;">
+                            <div style="border-left: 2px solid var(--neon-cyan); padding-left: 20px;">
+                                <p
+                                    style="margin: 0; font-family: var(--heading-font); font-size: 16pt; color: var(--star-bright); line-height: 1.2; font-weight: 600;">
+                                    Universidade de Brasília<br>
+                                    <span style="color: var(--neon-cyan); font-weight: 400; font-size: 14pt;">Faculdade
+                                        UnB Planaltina</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Title -->
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 0;">
+                        <h1
+                            style="font-size: 58pt; color: var(--star-bright); text-align: center; margin: 0; line-height: 1.1; text-shadow: 0 0 30px rgba(0,240,255,0.2);">
+                            Movimento em <br><span style="color: var(--neon-cyan);">Uma Dimensão</span>
+                        </h1>
+                    </div>
+
+                    <!-- Footer Group (Professor) -->
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <div class="media-card"
+                            style="width: 75px; height: 75px; border-radius: 50%; border: 2px solid var(--neon-cyan); box-shadow: 0 0 15px var(--neon-cyan-dim);">
+                            <img src="https://gravatar.com/avatar/60d294c6125ae4f5859f4b229249ec06?size=500"
+                                alt="avatar" style="opacity: 1;">
+                        </div>
                         <div style="text-align: left;">
-                            <div style="font-weight: bold; color: var(--star-bright);">Prof. Bernhard G. Enders</div>
-                            <div class="small" style="color: var(--star-dim);">Professor, FUP/UnB</div>
+                            <div
+                                style="font-family: var(--heading-font); font-weight: 700; color: var(--star-bright); font-size: 18pt;">
+                                Bernhard G. Enders</div>
+                            <div class="small"
+                                style="color: var(--neon-cyan); letter-spacing: 0.1em; font-weight: 600; margin-top: 5px;">
+                                PROFESSOR,
+                                FUP/UnB</div>
                         </div>
                     </div>
                 </div>
@@ -113,7 +146,7 @@
             <section id="slide-div-conceitos" class="deck-slide deck-slide--dark" data-transition="fade">
                 <div
                     style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--oxide);">A base teórica</div>
+                    <div class="eyebrow" style="background: var(--signal); color: var(--ink);">A base teórica</div>
                     <h1 style="font-size: 42pt; color: var(--paper); line-height: 1; margin: 0;">Conceitos Fundamentais
                     </h1>
                 </div>
@@ -197,7 +230,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="equation-plate fragment fade-up" style="margin-top: 20px;">
+                            <div class="equation-plate fragment fade-up">
                                 <p style="font-size:22pt; letter-spacing: 0.04em;">\(\Delta x = x_f - x_i\)</p>
                                 <p style="margin-top: 10px; font-size: 12pt;">
                                     <strong>\(\Delta x\)</strong>: deslocamento &nbsp;|&nbsp; <strong>\(x_f\)</strong>:
@@ -362,7 +395,7 @@
                             <div class="panel fragment fade-up"
                                 style="margin-top: 15px; border-left: 3px solid var(--neon-cyan);">
                                 <h3>Para um instante \(\mathbf{t = 2\,\text{s}}\)</h3>
-                                <p style="font-size: 20pt; font-weight: bold; color: var(--star-bright);">\(v(2) = 10
+                                <p style="font-weight: bold; color: var(--star-bright);">\(v(2) = 10
                                     \times 2 = 20\,\text{m/s}\)</p>
                             </div>
                         </div>
@@ -384,7 +417,7 @@
                         <div>
                             <p class="lead"><strong>Rapidez média</strong> é a razão entre a <em>distância total</em>
                                 percorrida e o tempo total:</p>
-                            <div class="equation-plate fragment fade-up" style="margin-top: 15px;">
+                            <div class="equation-plate fragment fade-up">
                                 <p style="font-size:18pt; letter-spacing: 0.04em;">\(\displaystyle s_{m} =
                                     \frac{\text{distância total}}{\Delta t}\)</p>
                             </div>
@@ -473,7 +506,7 @@
                         <div>
                             <p class="lead">Um guepardo parte de \(x_0 = 20\,\text{m}\) e sua posição varia com o tempo:
                             </p>
-                            <div class="equation-plate fragment fade-up" style="margin-top: 15px;">
+                            <div class="equation-plate fragment fade-up">
                                 <p style="font-size: 20pt;">\(x(t) = 20 + 10t^2\)</p>
                             </div>
                             <div class="panel fragment fade-up" style="margin-top: 15px;">
@@ -568,7 +601,6 @@
             hash: true,
             controls: true,
             progress: true,
-            slideNumber: 'c/t',
             navigationMode: 'linear',
             history: true,
             keyboard: true,
@@ -585,13 +617,7 @@
             backgroundTransition: 'concave',
             transition: 'concave',
             transitionSpeed: 'slow',
-            mathjax3: {
-                mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js',
-                options: {
-                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-                },
-            },
-            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.MathJax3]
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX]
         });
     </script>
 </body>

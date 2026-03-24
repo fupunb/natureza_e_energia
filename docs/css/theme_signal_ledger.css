@@ -30,7 +30,11 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
     linear-gradient(135deg, #181614 0%, #201d1a 100%);
-  background-size: auto, 24px 24px, 24px 24px, auto;
+  background-size:
+    auto,
+    24px 24px,
+    24px 24px,
+    auto;
   color: var(--ink);
   font-family: var(--body-font);
 }
@@ -115,7 +119,12 @@ body {
 
 .deck-slide--manifesto {
   background:
-    linear-gradient(90deg, rgba(21, 21, 21, 0.95) 0 24%, rgba(21, 21, 21, 0.08) 24%, rgba(21, 21, 21, 0) 32%),
+    linear-gradient(
+      90deg,
+      rgba(21, 21, 21, 0.95) 0 24%,
+      rgba(21, 21, 21, 0.08) 24%,
+      rgba(21, 21, 21, 0) 32%
+    ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
     var(--paper);
 }
@@ -279,8 +288,11 @@ body {
 
 .hero-panel,
 .metric-card {
-  background:
-    linear-gradient(180deg, rgba(21, 21, 21, 0.92), rgba(21, 21, 21, 0.86));
+  background: linear-gradient(
+    180deg,
+    rgba(21, 21, 21, 0.92),
+    rgba(21, 21, 21, 0.86)
+  );
 }
 
 .hero-panel::after,
@@ -291,7 +303,13 @@ body {
   right: 12px;
   width: 52px;
   height: 8px;
-  background: repeating-linear-gradient(90deg, var(--oxide), var(--oxide) 8px, transparent 8px, transparent 13px);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--oxide),
+    var(--oxide) 8px,
+    transparent 8px,
+    transparent 13px
+  );
   opacity: 0.8;
 }
 
@@ -352,8 +370,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(231, 222, 206, 0.36));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(231, 222, 206, 0.36)
+  );
 }
 
 .metric-card {
@@ -397,8 +418,11 @@ body {
   min-height: 160px;
   padding: 16px 16px 18px;
   border-left: 5px solid var(--ink);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(233, 224, 209, 0.92));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(233, 224, 209, 0.92)
+  );
   box-shadow: 10px 12px 0 rgba(21, 21, 21, 0.08);
 }
 
@@ -439,8 +463,11 @@ body {
   flex-direction: column;
   gap: 10px;
   border-top: 8px solid var(--ink);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(231, 222, 206, 0.46));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.76),
+    rgba(231, 222, 206, 0.46)
+  );
 }
 
 .comparison-card.vitrea {
@@ -491,8 +518,11 @@ body {
   position: relative;
   padding: 18px 22px 16px 74px;
   border-top: 3px solid var(--oxide);
-  background:
-    linear-gradient(90deg, rgba(21, 21, 21, 0.95) 0 56px, rgba(21, 21, 21, 0.06) 56px 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 21, 21, 0.95) 0 56px,
+    rgba(21, 21, 21, 0.06) 56px 100%
+  );
   color: var(--ink);
   font-family: var(--body-font);
   font-size: 18pt;
@@ -522,8 +552,11 @@ body {
 
 .table-shell {
   padding: 18px 18px 12px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(231, 222, 206, 0.42));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.74),
+    rgba(231, 222, 206, 0.42)
+  );
 }
 
 .nice-table {
@@ -591,8 +624,11 @@ body {
   gap: 10px;
   padding-left: 28px;
   border-left: 8px solid var(--oxide);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(231, 222, 206, 0.3));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(231, 222, 206, 0.3)
+  );
 }
 
 .quote-text {
@@ -711,8 +747,17 @@ body {
 
   .deck-slide--manifesto {
     background:
-      linear-gradient(180deg, rgba(21, 21, 21, 0.95) 0 76px, rgba(21, 21, 21, 0.08) 76px, rgba(21, 21, 21, 0) 120px),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
+      linear-gradient(
+        180deg,
+        rgba(21, 21, 21, 0.95) 0 76px,
+        rgba(21, 21, 21, 0.08) 76px,
+        rgba(21, 21, 21, 0) 120px
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0)
+      ),
       var(--paper);
   }
 
@@ -784,8 +829,11 @@ body {
 /* Law strip variant with signal (green) accent instead of oxide (red) */
 .law-strip--signal {
   border-top-color: var(--signal);
-  background:
-    linear-gradient(90deg, rgba(21, 21, 21, 0.95) 0 56px, rgba(123, 212, 165, 0.07) 56px 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(21, 21, 21, 0.95) 0 56px,
+    rgba(123, 212, 165, 0.07) 56px 100%
+  );
 }
 
 .law-strip--signal::before {
@@ -816,4 +864,3 @@ body {
   pointer-events: none;
   z-index: 1;
 }
-

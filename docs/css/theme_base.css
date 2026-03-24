@@ -19,9 +19,21 @@
 html,
 body {
   background:
-    radial-gradient(circle at 15% 20%, rgba(120, 240, 225, 0.12), transparent 22%),
-    radial-gradient(circle at 80% 18%, rgba(255, 142, 86, 0.16), transparent 20%),
-    radial-gradient(circle at 50% 80%, rgba(255, 208, 114, 0.08), transparent 26%),
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(120, 240, 225, 0.12),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 80% 18%,
+      rgba(255, 142, 86, 0.16),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 208, 114, 0.08),
+      transparent 26%
+    ),
     linear-gradient(135deg, #110f0f 0%, #1a1311 50%, #130f12 100%);
   color: var(--text);
   font-family: "Commissioner", sans-serif;
@@ -57,7 +69,12 @@ body {
   overflow: hidden;
   background:
     linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
-    linear-gradient(90deg, transparent 0%, rgba(255, 208, 114, 0.05) 50%, transparent 100%);
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 208, 114, 0.05) 50%,
+      transparent 100%
+    );
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 28px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -170,7 +187,7 @@ strong {
 .hero-panel {
   padding: 24px 28px;
   margin-right: 0px;
-  max-width: 20.0em;
+  max-width: 20em;
   justify-self: end;
   align-self: start;
   display: flex;
@@ -178,7 +195,11 @@ strong {
   justify-content: flex-start;
   gap: 12px;
   background:
-    linear-gradient(160deg, rgba(120, 240, 225, 0.12), rgba(255, 142, 86, 0.08)),
+    linear-gradient(
+      160deg,
+      rgba(120, 240, 225, 0.12),
+      rgba(255, 142, 86, 0.08)
+    ),
     var(--panel-strong);
 }
 
@@ -199,7 +220,6 @@ strong {
 .hero-panel p {
   margin: 0;
 }
-
 
 .hero-footer p {
   margin: 0;
@@ -250,7 +270,11 @@ strong {
   padding: 18px 18px 20px;
   border-radius: 20px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    ),
     rgba(14, 14, 14, 0.24);
   border: 1px solid rgba(120, 240, 225, 0.14);
   position: relative;
@@ -265,7 +289,11 @@ strong {
   font-size: 20pt;
   font-weight: 300;
   color: transparent;
-  background: linear-gradient(90deg, rgba(255, 142, 86, 0.95), rgba(255, 142, 86, 0));
+  background: linear-gradient(
+    90deg,
+    rgba(255, 142, 86, 0.95),
+    rgba(255, 142, 86, 0)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   transform-origin: center;
@@ -296,7 +324,11 @@ strong {
   padding: 30px 24px;
   border-radius: 24px;
   background:
-    radial-gradient(circle at 50% 35%, rgba(120, 240, 225, 0.12), transparent 38%),
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(120, 240, 225, 0.12),
+      transparent 38%
+    ),
     rgba(16, 15, 15, 0.42);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -313,7 +345,12 @@ strong {
   overflow: hidden;
   padding: 10px;
   background:
-    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08) 52%, rgba(0, 0, 0, 0.12) 100%),
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255, 255, 255, 0.22),
+      rgba(255, 255, 255, 0.08) 52%,
+      rgba(0, 0, 0, 0.12) 100%
+    ),
     rgba(255, 255, 255, 0.04);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.14),
@@ -401,13 +438,21 @@ strong {
 
 .comparison-card.vitrea {
   background:
-    radial-gradient(circle at 50% 10%, rgba(120, 240, 225, 0.18), transparent 40%),
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(120, 240, 225, 0.18),
+      transparent 40%
+    ),
     var(--panel);
 }
 
 .comparison-card.resinosa {
   background:
-    radial-gradient(circle at 50% 10%, rgba(255, 142, 86, 0.18), transparent 40%),
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 142, 86, 0.18),
+      transparent 40%
+    ),
     var(--panel);
 }
 
@@ -426,7 +471,7 @@ strong {
   margin: 0;
 }
 
-.law-strip .katex-display>.katex {
+.law-strip .katex-display > .katex {
   display: inline-block;
 }
 
@@ -469,13 +514,19 @@ strong {
   bottom: 8px;
   left: calc(var(--timeline-year-width) + (var(--timeline-axis-width) / 2));
   width: 1px;
-  background: linear-gradient(to bottom, rgba(120, 240, 225, 0.15), rgba(255, 142, 86, 0.25));
+  background: linear-gradient(
+    to bottom,
+    rgba(120, 240, 225, 0.15),
+    rgba(255, 142, 86, 0.25)
+  );
   transform: translateX(-50%);
 }
 
 .timeline-row {
   display: grid;
-  grid-template-columns: var(--timeline-year-width) var(--timeline-axis-width) minmax(0, 1fr);
+  grid-template-columns:
+    var(--timeline-year-width) var(--timeline-axis-width)
+    minmax(0, 1fr);
   align-items: start;
 }
 
@@ -603,7 +654,11 @@ strong {
   border-radius: 24px;
   box-shadow: var(--shadow);
   background:
-    linear-gradient(140deg, rgba(255, 208, 114, 0.08), rgba(255, 142, 86, 0.08)),
+    linear-gradient(
+      140deg,
+      rgba(255, 208, 114, 0.08),
+      rgba(255, 142, 86, 0.08)
+    ),
     var(--panel);
 }
 
@@ -626,7 +681,11 @@ strong {
   border-radius: 24px;
   border: 1px solid rgba(255, 142, 86, 0.18);
   background:
-    linear-gradient(145deg, rgba(255, 142, 86, 0.14), rgba(120, 240, 225, 0.06)),
+    linear-gradient(
+      145deg,
+      rgba(255, 142, 86, 0.14),
+      rgba(120, 240, 225, 0.06)
+    ),
     rgba(20, 16, 16, 0.8);
 }
 
@@ -658,7 +717,6 @@ strong {
 }
 
 @media (max-width: 1100px) {
-
   .hero-grid,
   .grid-2,
   .grid-3,
@@ -755,7 +813,9 @@ strong {
   opacity: 0;
   transform: translateY(6px) scale(0.98);
   pointer-events: none;
-  transition: opacity 140ms ease, transform 140ms ease;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
 }
 
 .dict-bubble.is-visible {
@@ -829,7 +889,9 @@ strong {
 .aula-ciencia .hero-question {
   padding: 20px 22px;
   border-radius: 24px;
-  background: linear-gradient(145deg, rgba(120, 240, 225, 0.10), rgba(255, 142, 86, 0.08)), var(--panel);
+  background:
+    linear-gradient(145deg, rgba(120, 240, 225, 0.1), rgba(255, 142, 86, 0.08)),
+    var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
 }
@@ -870,7 +932,11 @@ strong {
   padding: 18px 18px 20px;
   border-radius: 20px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    ),
     rgba(16, 15, 15, 0.32);
   border: 1px solid rgba(120, 240, 225, 0.14);
   min-height: 128px;
@@ -954,7 +1020,7 @@ strong {
   margin-bottom: 10px;
   padding: 5px 10px;
   border-radius: 999px;
-  background: rgba(120, 240, 225, 0.10);
+  background: rgba(120, 240, 225, 0.1);
   color: var(--teal);
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -971,7 +1037,13 @@ strong {
 .aula-ciencia .question-card {
   padding: 18px 18px 20px;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(120, 240, 225, 0.08), rgba(255, 142, 86, 0.08)), var(--panel);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(120, 240, 225, 0.08),
+      rgba(255, 142, 86, 0.08)
+    ),
+    var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
 }
@@ -998,8 +1070,12 @@ strong {
 }
 
 .aula-ciencia .tree-node.main {
-  background: linear-gradient(145deg, rgba(255, 208, 114, 0.10), rgba(255, 255, 255, 0.04));
-  border-color: rgba(255, 208, 114, 0.20);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 208, 114, 0.1),
+    rgba(255, 255, 255, 0.04)
+  );
+  border-color: rgba(255, 208, 114, 0.2);
 }
 
 .aula-ciencia .tree-node .node-title {
@@ -1040,7 +1116,7 @@ strong {
   display: inline-flex;
   padding: 6px 11px;
   border-radius: 999px;
-  background: rgba(255, 208, 114, 0.10);
+  background: rgba(255, 208, 114, 0.1);
   color: var(--gold-soft);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1058,7 +1134,7 @@ strong {
   padding: 16px;
   border-radius: 22px;
   background:
-    linear-gradient(145deg, rgba(120, 240, 225, 0.10), rgba(255, 142, 86, 0.08)),
+    linear-gradient(145deg, rgba(120, 240, 225, 0.1), rgba(255, 142, 86, 0.08)),
     var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
@@ -1089,8 +1165,16 @@ strong {
   border-radius: 20px;
   overflow: hidden;
   background:
-    radial-gradient(circle at center, rgba(255, 208, 114, 0.18), transparent 28%),
-    radial-gradient(circle at 50% 50%, rgba(120, 240, 225, 0.08), transparent 46%),
+    radial-gradient(
+      circle at center,
+      rgba(255, 208, 114, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 240, 225, 0.08),
+      transparent 46%
+    ),
     rgba(17, 15, 15, 0.72);
   display: flex;
   align-items: center;
@@ -1166,7 +1250,6 @@ strong {
 }
 
 @media (max-width: 1100px) {
-
   .aula-ciencia .image-grid,
   .aula-ciencia .claim-grid,
   .aula-ciencia .three-ideas,

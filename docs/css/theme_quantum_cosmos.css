@@ -513,6 +513,7 @@ body,
 
 .equation-plate {
   position: relative;
+  margin-top: 32px;
   padding: 24px;
   background: var(--void-deep);
   border: 1px solid var(--neon-cyan-dim);
@@ -670,18 +671,21 @@ body,
 }
 
 .reveal ul.clean li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  position: relative;
   margin: 0 0 14px;
-  padding-left: 0;
+  padding-left: 28px;
 }
 
 .reveal ul.clean li::before {
   content: "➠";
-  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 1.5em;
+  font-size: 1em;
   color: var(--neon-cyan);
-  font-size: 1.2em;
   font-family: var(--heading-font);
   text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
