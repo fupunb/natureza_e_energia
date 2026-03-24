@@ -41,7 +41,8 @@
 }
 
 html,
-body {
+body,
+.reveal-viewport {
   min-height: 100%;
   background: var(--void-deep);
   color: var(--star-base);
@@ -115,8 +116,8 @@ body {
   box-shadow: var(--shadow-deep);
 }
 
-/* Glow on the top edge of slides */
-.deck-slide::before {
+/* Glow on the top edge of the presentation container */
+.reveal .slides::after {
   content: "";
   position: absolute;
   top: 0;
@@ -125,7 +126,8 @@ body {
   height: 2px;
   background: linear-gradient(90deg, var(--neon-cyan), var(--neon-violet), var(--neon-magenta));
   opacity: 0.7;
-  z-index: 10;
+  z-index: 100;
+  pointer-events: none;
 }
 
 /* Slide Counter */

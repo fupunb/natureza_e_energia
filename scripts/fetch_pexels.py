@@ -3,7 +3,7 @@ import urllib.parse
 import json
 import os
 
-API_KEY = ""
+API_KEY = os.environ.get("PEXELS_API_KEY", "")
 BASE_URL = "https://api.pexels.com/v1/search"
 HEADERS = {
     "Authorization": API_KEY,
@@ -11,19 +11,17 @@ HEADERS = {
 }
 
 IMAGES_TO_FETCH = {
-    "aristotle": "ancient greek marble statue philosopher",
-    "library": "medieval ancient old library books",
-    "archer": "archer shooting arrow",
-    "telescope": "antique telescope astronomy stars",
-    "pisa": "leaning tower pisa landmark",
-    "ball": "physics ball dropping motion",
-    "orbit": "solar system galaxy planets orbits",
-    "newton": "isaac newton portrait classical painting", # fallback to ancient physics portrait
-    "gravity": "falling apple tree physics",
-    "experiment": "science physics laboratory motion tool"
+    "highway": "car driving highway motion blur",
+    "running": "athlete sprint track motion speed",
+    "bike": "person riding bicycle bright",
+    "dog": "dog running grass play",
+    "cheetah": "cheetah running wild fast animal horizontal",
+    "particle": "abstract glowing particles physics light",
+    "map": "map direction navigation travel",
+    "speedometer": "car speedometer dashboard fast"
 }
 
-OUT_DIR = "docs/historia_da_fisica/images"
+OUT_DIR = "docs/deslocamento_velocidade/images"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 for filename, query in IMAGES_TO_FETCH.items():

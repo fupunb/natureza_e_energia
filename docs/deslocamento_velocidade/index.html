@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="description" content="Slides, Notas de Aula">
+    <meta name="keywords" content="Slides, Notas de Aula, Física, Mecânica, Ciências, UnB">
+    <meta name="author" content="Bernhard Enders">
+
+    <title>Movimento em Uma Dimensão</title>
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
+
+    <!-- Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/night.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai.min.css">
+
+    <!-- Google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Our custom styles -->
+    <link rel="stylesheet" href="../css/wood.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <!-- CAPA -->
+            <section data-background-opacity="0.80" data-background-size="contain"
+                data-background-image="https://raw.githubusercontent.com/fupunb/mecanica-aplicada-ciencias/refs/heads/main/slides/assets/img/logos/logo_unb.webp">
+                <h3 style="margin-top: 10%;"><strong>Universidade de Brasília</strong></h3>
+                <h3>Faculdade UnB Planaltina</h3>
+                <h4 style="margin-top: 5%;">FUP0407: Mecânica Aplicada às Ciências</h4>
+                <h4 style="margin-top: 5%;">Tema: Movimento em Uma Dimensão</h4>
+                <div class="small-text" style="margin-top: 5%;">
+                    <div><img src="https://gravatar.com/avatar/60d294c6125ae4f5859f4b229249ec06?size=500" alt="avatar"
+                            width="64px" style="vertical-align: middle;"><em>Prof. Bernhard G. Enders</em></div>
+                </div>
+            </section>
+
+            <!-- OBJETIVOS DE APRENDIZAGEM -->
+            <section data-header="Objetivos de Aprendizagem">
+                <ul>
+                    <li>Descrever o movimento retilíneo em termos de deslocamento, velocidade média, velocidade
+                        instantânea, aceleração média e aceleração instantânea.</li>
+                    <li class="fragment">Interpretar gráficos de posição × tempo, velocidade × tempo e aceleração × tempo.</li>
+                    <li class="fragment">Resolver problemas envolvendo movimento retilíneo com aceleração constante, incluindo queda
+                        livre.</li>
+                    <li class="fragment">Analisar movimentos com aceleração variável.</li>
+                </ul>
+            </section>
+
+            <!-- INTRODUÇÃO -->
+            <section data-header="Introdução">
+                <ul>
+                    <li>
+                        Movimento em uma dimensão refere-se ao estudo do deslocamento de um corpo ao longo de uma linha
+                        reta.
+                    </li>
+                    <li class="fragment">
+                        É a base da cinemática, parte da mecânica que descreve o movimento sem se preocupar com suas
+                        causas.
+                    </li>
+                    <li class="fragment">
+                        Exemplos: carro em uma estrada reta, objeto caindo verticalmente, atleta correndo em uma pista
+                        retilínea.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- CONCEITOS FUNDAMENTAIS -->
+            <section data-header="Conceitos Fundamentais">
+                <section>
+                    <h4 style="text-align: left;">Partícula</h4>
+                    <ul>
+                        <li>Corpo tratado como um ponto material para simplificar a análise do movimento.</li>
+                        <li class="fragment">
+                            Em cinemática, tratamos objetos como <strong>partículas</strong> quando não nos importamos
+                            com
+                            seu tamanho, forma ou rotação.
+                        </li>
+                        <li class="fragment">
+                            Exemplos: carros, trens, planetas, pessoas, podem ser considerados partículas se só o
+                            movimento
+                            de um ponto importa (ou quando estão muito distantes).
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li><strong>Referencial:</strong> Sistema de coordenadas (e.g., eixo <em>x</em>) usado para
+                            descrever a
+                            posição do corpo.</li>
+                        <li class="fragment"><strong>Deslocamento (\(\Delta x\)):</strong> Variação da posição de um
+                            corpo ao longo do
+                            tempo.</li>
+                        <li class="fragment"><strong>Intervalo de Tempo (\(\Delta t\)):</strong> Duração do movimento.
+                            Intervalo de tempo durante o qual o movimento ocorre.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- POSIÇÃO E DESLOCAMENTO -->
+            <section data-header="Posição e Deslocamento">
+                <section>
+                    <ul>
+                        <li>
+                            Para descrever o movimento, precisamos saber a <strong>posição</strong> do objeto ao longo
+                            de um eixo (por exemplo, o eixo <em>x</em>).
+                        </li>
+                        <li class="fragment">
+                            <strong>Deslocamento</strong> é a mudança de posição de um objeto.
+                        </li>
+                        <li class="fragment">
+                            Usamos a notação $\Delta x$ (lê-se "delta <em>x</em>") para indicar a variação de
+                            <em>x</em>:
+                            <div class="white-frame">
+                                $\Delta x = x_f - x_i$
+                            </div>
+                            onde $x_f$ é a posição final e $x_i$ a posição inicial.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            <strong>Deslocamento</strong> pode ser positivo ou negativo, dependendo da direção do
+                            movimento.
+                        </li>
+                        <li class="fragment">
+                            <strong>Distância</strong> é o comprimento total percorrido, sempre positiva (escalar).
+                        </li>
+                        <li class="fragment">
+                            <strong>Deslocamento</strong> é uma grandeza vetorial: leva em conta a direção.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p>Exemplo: Um estudante de bicicleta se move em linha reta de $x_i = 1\,$m para $x_f = 3\,$m. O
+                        deslocamento
+                        é dado por $\Delta x = x_f - x_i$, assim: $\Delta x = 3 - 1 = 2\,$m.</p>
+                </section>
+                <section>
+                    <p class="fragment">
+                        Exemplo (Distância × Deslocamento): Um cachorro corre 20 m para buscar um graveto e retorna
+                        15
+                        m, sempre em linha reta.</p>
+                    <div class="white-frame fragment">
+                        <b>‣ Distância total:</b> $20\,\text{m} + 15\,\text{m} = 35\,\text{m}$ <br>
+                        <b>‣ Deslocamento:</b> $+20\,\text{m} + (-15\,\text{m}) = 5\,\text{m}$ <br>
+                        (na direção/sentido inicial)
+                    </div>
+                    <div class="footnote-text fragment"><b>Observação:</b> A distância é sempre maior ou igual ao
+                        módulo
+                        do deslocamento. </div>
+                </section>
+            </section>
+
+
+            <!-- VELOCIDADE MÉDIA -->
+            <section data-header="Velocidade Média">
+                <section>
+                    <ul>
+                        <li>
+                            <strong>Velocidade média</strong> descreve quão rápido e em que direção um objeto se move.
+                        </li>
+                        <li class="fragment">
+                            Definição:
+                            <div class="white-frame">
+                                $\displaystyle v_{m} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}$
+                            </div>
+                            onde $\Delta x$ é o deslocamento e $\Delta t$ o intervalo de tempo.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            É uma grandeza vetorial: o sinal indica o sentido do movimento.
+                        </li>
+                        <li class="fragment">
+                            Se o deslocamento for negativo, a velocidade média também será negativa.
+                        </li>
+                        <li class="fragment">
+                            Unidades: metros por segundo (m/s), quilômetros por hora (km/h), etc.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            Exemplo: Um carro parte do ponto \(x_1 = 0\) m e chega ao ponto \(x_2 = 100\) m em \(t_2 -
+                            t_1 = 20\)
+                            s.
+                        </li>
+                        <li class="fragment">
+                            <div class="white-frame">
+                                \[
+                                v_{m} = \frac{100\,\text{m} - 0\,\text{m}}{20\,\text{s}} = 5\,\text{m/s}
+                                \]
+                            </div>
+                        </li>
+                        <li class="fragment">
+                            Se o carro voltasse ao ponto inicial, o deslocamento seria zero e a velocidade média também.
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- VELOCIDADE INSTANTÂNEA -->
+            <section data-header="Velocidade Instantânea">
+                <section>
+                    <ul>
+                        <li>
+                            Velocidade instantânea é a velocidade em um instante específico de tempo.
+                        </li>
+                        <li class="fragment">
+                            É o limite da velocidade média quando o intervalo de tempo tende a zero:
+                            <div class="white-frame">
+                                \[
+                                v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}
+                                \]
+                            </div>
+                        </li>
+                        <li class="fragment">
+                            Corresponde à inclinação da reta tangente à curva \(x(t)\) em um gráfico posição × tempo.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            Exemplo: Se a posição de uma partícula é dada por $x(t) = 5t^2$ (em metros, com $t$ em
+                            segundos),
+                            qual a
+                            velocidade no instante $t$?
+                        </li>
+                        <li class="fragment">
+                            <div class="white-frame">
+                                $\displaystyle v(t) = \frac{dx}{dt} = \frac{d}{dt}(5t^2) = 10t$
+                            </div>
+                        </li>
+                        <li class="fragment">
+                            No instante $t = 2\,\text{s}$: $v(2) = 10 \times 2 = 20\,\text{m/s}$
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section data-header="Rapidez Média">
+                <section>
+                    <ul>
+                        <li>
+                            <strong>Rapidez média</strong> é a razão entre a distância total percorrida e o tempo total:
+                        </li>
+                        <div class="white-frame fragment">
+                            $\displaystyle s_{m} = \frac{\text{distância total}}{\Delta t}$
+                        </div>
+                        <li class="fragment">
+                            <strong>Diferença:</strong> Rapidez média é sempre positiva; velocidade média pode ser
+                            negativa, positiva ou zero.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            Exemplo: Um cachorro corre 20 m em 2,0 s e retorna 15 m em 1,5 s.
+                        </li>
+                        <div class="white-frame fragment">
+                            <b>Rapidez média:</b> $s_{m} = \frac{35\,\text{m}}{3{,}5\,\text{s}} =
+                            10\,\text{m/s}$ <br>
+                            <b>Velocidade média:</b> $ v_{m} = \frac{5\,\text{m}}{3{,}5\,\text{s}} \approx
+                            1{,}43\,\text{m/s}$
+                        </div>
+                        <li class="fragment">
+                            <b>Conclusão:</b> A rapidez média é maior que o módulo da velocidade média.
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- DIFERENÇA ENTRE VELOCIDADE E VELOCIDADE ESCALAR (RAPIDEZ) -->
+            <section data-header="Velocidade vs Rapidez">
+                <ul>
+                    <li>
+                        <strong>Velocidade</strong> é uma grandeza vetorial: indica módulo, direção e sentido.
+                    </li>
+                    <li class="fragment">
+                        <strong>Rapidez</strong> (ou velocidade escalar) é uma grandeza escalar: indica apenas o
+                        módulo.
+                    </li>
+                    <li class="fragment">
+                        Exemplo: Um objeto que vai e volta ao ponto de origem tem rapidez média diferente de
+                        velocidade
+                        média.
+                    </li>
+                </ul>
+            </section>
+
+
+            <!-- DIFERENÇAS ENTRE DESLOCAMENTO, VELOCIDADE E RAPIDEZ -->
+            <section data-header="Diferenças Fundamentais">
+                <ul>
+                    <li>
+                        <b>Deslocamento ($\Delta x$):</b> Mudança de posição, pode ser positivo ou negativo, depende da
+                        direção.
+                    </li>
+                    <li class="fragment">
+                        <b>Distância:</b> Caminho total percorrido, sempre positiva.
+                    </li>
+                    <li class="fragment">
+                        <b>Velocidade:</b> Mede quão rápido e em que direção ocorre o deslocamento.
+                    </li>
+                    <li class="fragment">
+                        <b>Rapidez:</b> Mede apenas quão rápido o objeto se move, sem considerar direção.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- DICAS E CUIDADOS -->
+            <section data-header="Dicas e Cuidados">
+                <ul>
+                    <li>
+                        A escolha do sentido positivo do eixo é arbitrária, mas deve ser mantida durante todo o
+                        problema.
+                    </li>
+                    <li class="fragment">
+                        Velocidade negativa indica movimento no sentido oposto ao escolhido como positivo.
+                    </li>
+                    <li class="fragment">
+                        Deslocamento e distância percorrida são conceitos diferentes.
+                    </li>
+                    <li class="fragment">
+                        Unidades devem ser consistentes em todos os cálculos.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- EXEMPLO RESOLVIDO: CHEETAH -->
+            <section data-header="Exercício Resolvido">
+                <section>
+                    <p>
+                        Um guepardo parte de \(x_0 = 20\,\text{m}\) e sua posição varia com o tempo segundo a função:
+                        <br>
+                    </p>
+                    <div class="white-frame">
+                        \[
+                        x(t) = 20 + 10t^2
+                        \]
+                    </div>
+                    <p>
+                        <b>Dados:</b> \(t_1 = 1,0\,\text{s}\), \(t_2 = 2,0\,\text{s}\) <br>
+                        <b>Objetivo:</b> Calcular o deslocamento, a velocidade média e a velocidade instantânea do
+                        guepardo.
+                    </p>
+                </section>
+                <section>
+                    <ul>
+                        <li>Deslocamento entre \(t_1 = 1,0\,\text{s}\) e \(t_2 = 2,0\,\text{s}\):</li>
+                        <div class="white-frame">
+                            \[
+                            \Delta x = x(2,0) - x(1,0) \\ \Delta x = [20 + 10 \times 4] - [20 + 10\times 1] \\
+                            \Delta x = 60 - 30 = 30\,\text{m}
+                            \]
+                        </div>
+                        <li>Velocidade média:</li>
+                        <div class="white-frame">
+                            \[
+                            v_m = \frac{30}{1,0} = 30\,\text{m/s}
+                            \]
+                        </div>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>Velocidade instantânea em \(t = 2,0\,\text{s}\):</li>
+                        <div class="white-frame">
+                            \[
+                            v = \frac{dx}{dt} = 20t \implies v(2,0) = 40\,\text{m/s}
+                            \]
+                        </div>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- EXERCÍCIO PROPOSTO -->
+            <section data-header="Exercício Proposto">
+                <p>
+                    Um carro parte do ponto $A$ e vai até o ponto $B$, 100 m à direita de $A$, em 10 s. Em seguida,
+                    retorna até o ponto $C$, 40 m à esquerda de $A$, em mais 20 s.<br>
+                    <b>Calcule:</b>
+                <ol>
+                    <li>A distância total percorrida.</li>
+                    <li>O deslocamento total.</li>
+                    <li>A rapidez média e a velocidade média no percurso total.</li>
+                </ol>
+                </p>
+            </section>
+
+
+
+        </div><!-- End of slides -->
+
+    </div><!-- End of reveal -->
+
+    <!-- Reveal.js Core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"></script>
+    <!-- Reveal.js Plugins (optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/zoom/zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/search/search.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/math/math.min.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            navigationMode: 'linear',
+            history: true,
+            keyboard: true,
+            overview: true,
+            center: false,
+            touch: true,
+            loop: false,
+            fragments: true,
+            embedded: false,
+            help: true,
+            autoAnimate: true,
+            autoAnimateEasing: 'ease',
+            backgroundTransition: 'concave',
+            transition: 'concave',
+            transitionSpeed: 'slow',
+            parallaxBackgroundImage: 'https://raw.githubusercontent.com/fupunb/mecanica-aplicada-ciencias/refs/heads/main/slides/assets/img/backgrounds/wood-board.webp',
+            parallaxBackgroundHorizontal: 200,
+            parallaxBackgroundVertical: 100,
+            mathjax3: {
+                mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js',
+                options: {
+                    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                },
+            },
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.MathJax3]
+        });
+    </script>
+
+</body>
+
+</html>
