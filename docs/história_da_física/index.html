@@ -615,7 +615,7 @@
       </section>
 
       <!-- Slide 23 -->
-      <section id="slide-23" class="deck-slide">
+      <section id="slide-23" class="deck-slide timeline-slide">
         <div class="slide-inner">
           <div class="eyebrow">Linha do tempo final</div>
           <h2>Linha do tempo da cinemática</h2>
@@ -699,14 +699,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/math/math.min.js"></script>
   <script>
     Reveal.initialize({
-      width: 1280,
-      height: 720,
-      margin: 0,
+      margin: 0.09,
       controls: true,
       progress: true,
+      history: false,
+      keyboard: true,
+      overview: true,
       slideNumber: false,
       hash: true,
       transition: 'slide',
+      touch: true,
       center: false,
       plugins: [RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX],
       parallaxBackgroundImage: './quantum-physics-01.webp',

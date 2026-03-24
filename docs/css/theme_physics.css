@@ -343,10 +343,10 @@ ul.clean li::before {
 .timeline-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
   position: relative;
-  padding: 10px 0 10px 40px;
-  margin-top: 5px;
+  padding: 5px 0 5px 40px;
+  margin-top: 0;
 }
 
 .timeline-container::before {
@@ -364,8 +364,8 @@ ul.clean li::before {
   position: relative;
   background: var(--panel-bg);
   border: 1px solid var(--line-color);
-  border-radius: 12px;
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 4px 12px;
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease;
 }
@@ -376,8 +376,8 @@ ul.clean li::before {
   left: -32px;
   top: 50%;
   transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   background: var(--bg-color);
   border: 2px solid var(--cyan);
   border-radius: 50%;
@@ -392,12 +392,12 @@ ul.clean li::before {
 
 .timeline-item .time-label {
   font-family: var(--mono-font);
-  font-size: 0.72em;
+  font-size: 0.58em;
   color: var(--cyan);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: 0;
 }
 
 .timeline-item:nth-child(even) .time-label {
@@ -405,14 +405,25 @@ ul.clean li::before {
 }
 
 .timeline-item .time-content {
-  font-size: 0.85em;
+  font-size: 0.72em;
   color: var(--text);
-  line-height: 1.35;
+  line-height: 1.25;
 }
 
 .timeline-item strong {
   font-family: var(--heading-font);
   font-weight: 600;
   color: var(--text);
+}
+
+/* Specific scaling for the timeline slide to ensure vertical fit */
+.timeline-slide h2 {
+  font-size: 1.8em !important;
+  margin-bottom: 0.2em !important;
+}
+
+.timeline-slide .eyebrow {
+  font-size: 0.55em !important;
+  margin-bottom: 5px !important;
 }
 
