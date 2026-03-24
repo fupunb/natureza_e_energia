@@ -3,7 +3,7 @@ import urllib.parse
 import json
 import os
 
-API_KEY = "LxG1Nz6usti12U08uxGHJ05UVPk6NYVzBL5WIB7xK0ZVZseJPiU3F5ES"
+API_KEY = ""
 BASE_URL = "https://api.pexels.com/v1/search"
 HEADERS = {
     "Authorization": API_KEY,

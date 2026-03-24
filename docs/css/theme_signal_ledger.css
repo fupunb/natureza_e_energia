@@ -753,17 +753,42 @@ body {
 }
 
 /* =====================================================
-   Extensions for Newton's Laws presentation
+   Shared structural extensions
    ===================================================== */
 
-/* Law strip variant with signal (green) accent */
-.law-strip.newton-law {
+/* Dark interstitial / divider slides */
+.deck-slide.deck-slide--dark {
+  background: linear-gradient(180deg, #1e1b18, #151515);
+}
+
+.deck-slide.deck-slide--dark::before {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.deck-slide.deck-slide--dark::after {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+/* Manifesto left-column: text must be light (sits on dark gradient) */
+.deck-slide--manifesto .slide-inner > div:first-child h1,
+.deck-slide--manifesto .slide-inner > div:first-child h2,
+.deck-slide--manifesto .slide-inner > div:first-child p {
+  color: var(--paper);
+}
+
+.deck-slide--manifesto .slide-inner > div:first-child .eyebrow {
+  background: var(--oxide);
+  color: var(--paper);
+}
+
+/* Law strip variant with signal (green) accent instead of oxide (red) */
+.law-strip--signal {
   border-top-color: var(--signal);
   background:
     linear-gradient(90deg, rgba(21, 21, 21, 0.95) 0 56px, rgba(123, 212, 165, 0.07) 56px 100%);
 }
 
-.law-strip.newton-law::before {
+.law-strip--signal::before {
   content: "→";
   font-size: 22pt;
   color: var(--signal);
