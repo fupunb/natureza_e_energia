@@ -4,6 +4,8 @@ import path from "node:path";
 const repoRoot = process.cwd();
 const docsDir = path.join(repoRoot, "docs");
 const outputFile = path.join(docsDir, "index.html");
+const fallbackFile = path.join(docsDir, "404.html");
+const noJekyllFile = path.join(docsDir, ".nojekyll");
 const itemsPerSlide = 8;
 
 async function exists(filePath) {
@@ -169,6 +171,12 @@ ${slidesMarkup}
 `;
 
 await mkdir(docsDir, { recursive: true });
-await writeFile(outputFile, html, "utf8");
+await Promise.all([
+  writeFile(outputFile, html, "utf8"),
+  writeFile(fallbackFile, html, "utf8"),
+  writeFile(noJekyllFile, "", "utf8")
+]);
 
-console.log(`Generated ${path.relative(repoRoot, outputFile)} with ${slideFolders.length} entr${slideFolders.length === 1 ? "y" : "ies"}.`);
+console.log(
+  `Generated ${path.relative(repoRoot, outputFile)}, ${path.relative(repoRoot, fallbackFile)}, and ${path.relative(repoRoot, noJekyllFile)} with ${slideFolders.length} entr${slideFolders.length === 1 ? "y" : "ies"}.`
+);
