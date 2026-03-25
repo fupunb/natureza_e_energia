@@ -1,0 +1,325 @@
+@mixin numbered-deck($padding,
+  $background,
+  $shadow,
+  $counter-color,
+  $counter-font: var(--heading-font),
+  $counter-size: 14pt,
+  $counter-weight: 700,
+  $counter-letter-spacing: 0.1em,
+  $counter-bottom: 24px,
+  $counter-right: 32px,
+  $counter-top: null,
+  $counter-left: null,
+  $frame-inset: null,
+  $frame-border: null,
+  $frame-pointer-events: none) {
+  .deck-slide {
+    counter-increment: deck-slide;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex !important;
+    align-items: stretch;
+    padding: $padding;
+    background: $background;
+    box-shadow: $shadow;
+
+    @if $frame-inset !=null and $frame-border !=null {
+      &::before {
+        content: "";
+        position: absolute;
+        inset: $frame-inset;
+        border: $frame-border;
+        pointer-events: $frame-pointer-events;
+      }
+    }
+
+    &::after {
+      content: counter(deck-slide, decimal-leading-zero);
+      position: absolute;
+
+      @if $counter-top !=null {
+        top: $counter-top;
+      }
+
+      @if $counter-right !=null {
+        right: $counter-right;
+      }
+
+      @if $counter-bottom !=null {
+        bottom: $counter-bottom;
+      }
+
+      @if $counter-left !=null {
+        left: $counter-left;
+      }
+
+      color: $counter-color;
+      font-family: $counter-font;
+      font-size: $counter-size;
+      font-weight: $counter-weight;
+      letter-spacing: $counter-letter-spacing;
+      line-height: 1;
+    }
+  }
+}
+
+@mixin slide-inner-grid($columns, $hero-columns, $column-gap, $row-gap) {
+  .slide-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: $columns;
+    align-content: center;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+
+    >* {
+      min-width: 0;
+    }
+
+    >.eyebrow,
+    >h1,
+    >h2 {
+      grid-column: 1;
+      align-self: start;
+    }
+
+    >.lead,
+    >.hero-grid,
+    >.grid-2,
+    >.grid-3,
+    >.summary-band,
+    >.process-row,
+    >.table-shell,
+    >.quote-panel,
+    >.hero-footer {
+      grid-column: 2;
+    }
+
+    >.law-strip {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .hero .slide-inner {
+    grid-template-columns: $hero-columns;
+    align-content: space-between;
+  }
+}
+
+@mixin eyebrow-chip($padding,
+  $radius,
+  $color,
+  $background,
+  $font,
+  $font-size,
+  $font-weight,
+  $letter-spacing,
+  $shadow: null) {
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    width: fit-content;
+    padding: $padding;
+    border-radius: $radius;
+    color: $color;
+    background: $background;
+    font-family: $font;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+
+    @if $shadow !=null {
+      box-shadow: $shadow;
+    }
+  }
+}
+
+@mixin lead-block($max-width,
+  $padding,
+  $border-color,
+  $border-width,
+  $radius,
+  $background,
+  $color,
+  $font-size,
+  $font-weight: 400,
+  $line-height: 1.5) {
+  .lead {
+    align-self: start;
+    max-width: $max-width;
+    padding: $padding;
+    border-left: $border-width solid $border-color;
+    border-radius: $radius;
+    background: $background;
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+  }
+}
+
+@mixin kicker-text($max-width,
+  $padding-top,
+  $border-top,
+  $color,
+  $font-size,
+  $font-style: italic,
+  $font-weight: 300) {
+  .kicker {
+    max-width: $max-width;
+    padding-top: $padding-top;
+    border-top: $border-top;
+    color: $color;
+    font-size: $font-size;
+    font-style: $font-style;
+    font-weight: $font-weight;
+  }
+}
+
+@mixin small-text($color, $font-size: 11pt) {
+  .small {
+    font-size: $font-size;
+    color: $color;
+  }
+}
+
+@mixin section-divider-kit($gap: 24px,
+  $title-color: inherit,
+  $title-line-height: 1.05,
+  $title-lg-size: 38pt,
+  $title-xl-size: 42pt) {
+  .section-divider__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 0;
+    text-align: center;
+    gap: $gap;
+  }
+
+  .section-divider__title {
+    margin: 0;
+    color: $title-color;
+    line-height: $title-line-height;
+  }
+
+  .section-divider__title--lg {
+    font-size: $title-lg-size;
+  }
+
+  .section-divider__title--xl {
+    font-size: $title-xl-size;
+    line-height: 1;
+  }
+}
+
+@mixin hero-grid($columns, $gap) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: $columns;
+    gap: $gap;
+    align-items: start;
+
+    >* {
+      min-width: 0;
+    }
+  }
+}
+
+@mixin standard-grids($gap: 24px) {
+
+  .grid-2,
+  .grid-3 {
+    display: grid;
+    gap: $gap;
+    align-items: stretch;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@mixin framed-media-card($background,
+  $border,
+  $radius: 0,
+  $shadow: null,
+  $hover-scale: null,
+  $hover-opacity: 1) {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius;
+  background: $background;
+
+  @if $shadow !=null {
+    box-shadow: $shadow;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @if $hover-scale !=null {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0.85;
+    }
+  }
+
+  @if $hover-scale !=null {
+    &:hover img {
+      transform: scale($hover-scale);
+      opacity: $hover-opacity;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid $border;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@mixin glass-panel($background,
+  $border,
+  $radius: 8px,
+  $padding: 24px,
+  $blur: 12px) {
+  position: relative;
+  padding: $padding;
+  background: $background;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+  border-radius: $radius;
+}
+
+@mixin card-hover($glow-color) {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 24px rgba(0, 0, 0, 0.4),
+      0 0 20px $glow-color;
+    border-color: var(--glass-border-strong);
+  }
+}

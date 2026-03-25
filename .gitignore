@@ -1,5 +1,6 @@
 # Node
 node_modules/
+.codex-tools/
 
 # Python
 __pycache__/

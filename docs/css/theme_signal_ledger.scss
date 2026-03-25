@@ -1,0 +1,794 @@
+/**
+ * Signal Ledger theme for reveal.js
+ *
+ * This theme follows the reveal.js Sass theme structure:
+ * 1. declare palette and typography tokens
+ * 2. inject reveal core theme settings
+ * 3. add deck-specific components and utilities
+ *
+ * Compile with Sass to generate docs/css/theme_signal_ledger.css.
+ */
+
+@use "sass:color";
+@use "./theme_family/core" as family-core;
+@use "./theme_family/deck" as family-deck;
+@use "../../.agents/skills/revealjs/theme/template/mixins" as reveal-mixins;
+
+$paper: #f2ede3;
+$paper-alt: #e7dece;
+$ink: #151515;
+$ink-soft: #3d392f;
+$line: rgba($ink, 0.14);
+$line-strong: rgba($ink, 0.3);
+$oxide: #d4552d;
+$oxide-soft: #f1b49e;
+$signal: #7bd4a5;
+$signal-soft: #d7f5e6;
+$fog: #b9b0a2;
+$shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+
+$heading-font: '"Barlow Condensed", "Arial Narrow", sans-serif';
+$body-font: '"Literata", Georgia, serif';
+$ledger-notch-shape: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+
+$ledger-background: linear-gradient(0deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+  linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+  linear-gradient(135deg, #151515 0%, #1d1a18 100%);
+
+@use "../../.agents/skills/revealjs/theme/template/settings" with ($background: $ledger-background,
+  $background-color: #151515,
+
+  $main-font: $body-font,
+  $main-font-size: 30px,
+  $main-color: $ink,
+
+  $block-margin: 0.8em,
+
+  $heading-margin: 0,
+  $heading-font: $heading-font,
+  $heading-color: $ink,
+  $heading-line-height: 0.92,
+  $heading-letter-spacing: 0.02em,
+  $heading-text-transform: uppercase,
+  $heading-text-shadow: none,
+  $heading-font-weight: 700,
+  $heading1-size: 30pt,
+  $heading2-size: 23pt,
+  $heading3-size: 10.8pt,
+  $heading4-size: 9.4pt,
+
+  $code-font: '"JetBrains Mono", "Fira Code", monospace',
+
+  $link-color: $oxide,
+  $link-color-dark: color.scale($oxide, $lightness: -16%),
+  $link-color-hover: color.scale($oxide, $lightness: 18%),
+  $selection-background-color: color.scale($signal, $lightness: -18%),
+  $selection-color: $ink,
+
+  $overlay-element-bg-color: "242 237 227",
+  $overlay-element-fg-color: "21 21 21"
+);
+
+@use "../../.agents/skills/revealjs/theme/template/theme";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Literata:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;600&display=swap");
+
+@include reveal-mixins.light-bg-text-color($ink);
+@include reveal-mixins.dark-bg-text-color($paper);
+
+:root {
+  @include family-core.css-vars((paper: $paper,
+      paper-alt: $paper-alt,
+      ink: $ink,
+      ink-soft: $ink-soft,
+      line: $line,
+      line-strong: $line-strong,
+      oxide: $oxide,
+      oxide-soft: $oxide-soft,
+      signal: $signal,
+      signal-soft: $signal-soft,
+      fog: $fog,
+      shadow: $shadow,
+      heading-font: $heading-font,
+      body-font: $body-font,
+      body-size: 14.2pt,
+      lead-size: 15.8pt,
+      h1-size: 30pt,
+      h2-size: 23pt,
+      h3-size: 10.8pt,
+      meta-size: 9.4pt,
+      table-size: 10.8pt,
+    ));
+}
+
+@include family-core.reveal-surface($ledger-background,
+  var(--ink),
+  var(--body-font));
+
+html,
+body,
+.reveal-viewport {
+  background-size:
+    auto,
+    24px 24px,
+    24px 24px,
+    auto;
+}
+
+@include family-core.reveal-shell(var(--ink),
+  var(--body-font),
+  var(--heading-font),
+  var(--ink),
+  $progress-color: var(--oxide),
+  $progress-height: 6px,
+  $controls-color: var(--paper),
+  $strong-color: var(--ink),
+  $strong-weight: 700,
+  $body-line-height: 1.46,
+  $heading-letter-spacing: 0.02em,
+  $heading-line-height: 0.92);
+
+@include family-deck.numbered-deck(34px 42px,
+  (linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+    var(--paper)),
+  var(--shadow),
+  rgba(21, 21, 21, 0.08),
+  var(--heading-font),
+  44pt,
+  700,
+  0.02em,
+  null,
+  18px,
+  18px,
+  null,
+  18px,
+  1px solid var(--line));
+
+@include family-deck.slide-inner-grid(220px minmax(0, 1fr),
+  260px minmax(0, 1fr),
+  26px,
+  14px);
+
+@include family-deck.eyebrow-chip(6px 10px 5px,
+  0,
+  var(--paper),
+  var(--ink),
+  var(--heading-font),
+  var(--meta-size),
+  600,
+  0.16em);
+
+@include family-deck.lead-block(38em,
+  16px 18px 14px,
+  var(--signal),
+  4px,
+  0,
+  rgba(123, 212, 165, 0.11),
+  var(--ink),
+  var(--lead-size),
+  400,
+  1.42);
+
+@include family-deck.kicker-text(34em,
+  8px,
+  1px solid var(--line-strong),
+  var(--ink-soft),
+  12.4pt);
+
+@include family-deck.small-text(var(--ink-soft), 11pt);
+@include family-deck.hero-grid(minmax(0, 1fr) 300px, 22px);
+@include family-deck.standard-grids(18px);
+
+@mixin ledger-frame($background) {
+  position: relative;
+  background: $background;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--line);
+    pointer-events: none;
+  }
+}
+
+@mixin ledger-notched-panel($background, $padding: 18px 20px 18px 22px) {
+  @include ledger-frame($background);
+  padding: $padding;
+  clip-path: $ledger-notch-shape;
+}
+
+.reveal h1 {
+  max-width: 4.6em;
+}
+
+.reveal h2 {
+  max-width: 6.4em;
+}
+
+.reveal h3 {
+  margin: 0 0 0.45em;
+  color: var(--ink-soft);
+  font-family: var(--heading-font);
+  font-size: var(--h3-size);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  border-top: 2px solid var(--oxide);
+  line-height: 1;
+}
+
+.deck-slide--manifesto {
+  background:
+    linear-gradient(90deg,
+      rgba(21, 21, 21, 0.97) 0 28%,
+      rgba(21, 21, 21, 0.18) 28%,
+      rgba(21, 21, 21, 0) 40%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0)),
+    var(--paper);
+
+  .slide-inner {
+    grid-template-columns: 280px minmax(0, 1fr) !important;
+  }
+
+  .slide-inner>div:first-child {
+    width: 100%;
+    max-width: 240px;
+    padding-right: 20px !important;
+  }
+
+  .kicker {
+    max-width: 17ch !important;
+  }
+
+  .hero-panel {
+    margin-top: 16px;
+  }
+
+  &::after {
+    top: 10px;
+    right: 14px;
+    z-index: 2;
+    font-size: 38pt;
+  }
+}
+
+.deck-slide--manifesto h1,
+.hero-panel strong,
+.metric-card strong,
+.equation-plate strong {
+  color: var(--paper);
+}
+
+.hero-grid>div:first-child {
+  padding-top: 6px;
+}
+
+.hero-grid .lead {
+  max-width: 30em;
+}
+
+.hero-panel,
+.panel,
+.metric-card,
+.comparison-card,
+.quote-panel {
+  @include ledger-notched-panel(linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)));
+}
+
+.hero-panel,
+.metric-card {
+  background: linear-gradient(180deg,
+      rgba(21, 21, 21, 0.92),
+      rgba(21, 21, 21, 0.86));
+}
+
+.hero-panel::after,
+.metric-card::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 52px;
+  height: 8px;
+  background: repeating-linear-gradient(90deg,
+      var(--oxide),
+      var(--oxide) 8px,
+      transparent 8px,
+      transparent 13px);
+  opacity: 0.8;
+}
+
+.hero-subtitle,
+.metric-label,
+.term-caption {
+  color: var(--signal);
+  font-family: var(--heading-font);
+  font-size: var(--meta-size);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-panel p,
+.metric-card p {
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.hero-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  padding-top: 8px;
+}
+
+.summary-band {
+  display: grid;
+  gap: 18px;
+  align-items: stretch;
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(231, 222, 206, 0.36));
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.metric-value,
+.term-word {
+  color: var(--paper);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 24pt;
+}
+
+.term-word {
+  color: var(--ink);
+  font-size: 21pt;
+}
+
+.process-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.process-row.process-row-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.process-step {
+  position: relative;
+  min-height: 160px;
+  padding: 16px 16px 18px;
+  border-left: 5px solid var(--ink);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(233, 224, 209, 0.92));
+  box-shadow: 10px 12px 0 rgba(21, 21, 21, 0.08);
+}
+
+.process-step:nth-child(2n) {
+  transform: translateY(16px);
+}
+
+.process-step:nth-child(3n) {
+  border-left-color: var(--oxide);
+}
+
+.process-step::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-top: 2px solid rgba(21, 21, 21, 0.18);
+  border-right: 2px solid rgba(21, 21, 21, 0.18);
+}
+
+.step-index {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 3px 8px 2px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--heading-font);
+  font-size: var(--meta-size);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 8px solid var(--ink);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(231, 222, 206, 0.46));
+}
+
+.comparison-card.vitrea {
+  border-top-color: var(--signal);
+}
+
+.comparison-card.resinosa {
+  border-top-color: var(--oxide);
+}
+
+.equation-plate {
+  position: relative;
+  padding: 16px 16px 14px;
+  background: var(--ink);
+  border-left: 5px solid var(--signal);
+  box-shadow: inset 0 0 0 1px rgba(242, 237, 227, 0.08);
+}
+
+.equation-plate::before {
+  content: "equação";
+  position: absolute;
+  top: -11px;
+  left: 14px;
+  padding: 3px 8px 2px;
+  background: var(--oxide);
+  color: var(--paper);
+  font-family: var(--heading-font);
+  font-size: 8.6pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.equation-plate p,
+.equation-plate .katex {
+  color: var(--paper);
+}
+
+.equation-plate--compact {
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+
+.law-strip {
+  position: relative;
+  padding: 18px 22px 16px 74px;
+  border-top: 3px solid var(--oxide);
+  background: linear-gradient(90deg,
+      rgba(21, 21, 21, 0.95) 0 56px,
+      rgba(21, 21, 21, 0.06) 56px 100%);
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 18pt;
+  line-height: 1.16;
+}
+
+.law-strip::before {
+  content: "E";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--paper);
+  font-family: var(--heading-font);
+  font-size: 24pt;
+  font-weight: 700;
+}
+
+.law-strip .katex {
+  color: var(--ink);
+}
+
+.law-strip .katex-display,
+.law-strip .katex-display>.katex {
+  margin: 0;
+}
+
+.table-shell {
+  @include ledger-frame(linear-gradient(180deg,
+      rgba(255, 255, 255, 0.74),
+      rgba(231, 222, 206, 0.42)));
+  padding: 18px 18px 12px;
+}
+
+.nice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--table-size);
+  line-height: 1.42;
+}
+
+.nice-table thead th {
+  padding: 0.7em 0.75em;
+  border-bottom: 2px solid var(--ink);
+  text-align: left;
+  color: var(--ink);
+  font-family: var(--heading-font);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nice-table tbody td {
+  padding: 0.72em 0.75em;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.nice-table tbody tr:nth-child(odd) {
+  background: rgba(21, 21, 21, 0.04);
+}
+
+.nice-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.nice-table td:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.nice-table .pos {
+  color: var(--oxide);
+  font-weight: 700;
+}
+
+.nice-table .neg {
+  color: #226a4f;
+  font-weight: 700;
+}
+
+.nice-table .rule {
+  color: var(--ink-soft);
+}
+
+.table-note {
+  margin-top: 10px;
+  color: #6c6558;
+  font-size: 9.8pt;
+  line-height: 1.42;
+}
+
+.quote-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 28px;
+  border-left: 8px solid var(--oxide);
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(231, 222, 206, 0.3));
+}
+
+.quote-text {
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 18pt;
+  font-style: italic;
+  line-height: 1.28;
+}
+
+.image-caption {
+  color: var(--ink-soft);
+  font-style: italic;
+  line-height: 1.38;
+}
+
+.reveal ul.clean {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reveal ul.clean li {
+  position: relative;
+  margin: 0 0 12px;
+  padding-left: 22px;
+}
+
+.reveal ul.clean li::before {
+  content: "";
+  position: absolute;
+  top: 0.54em;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--oxide);
+}
+
+.reveal .katex {
+  color: inherit;
+}
+
+.deck-slide--applications .grid-3 .panel:nth-child(2) {
+  transform: translateY(18px);
+}
+
+.deck-slide--closing .comparison-card {
+  min-height: 180px;
+}
+
+/* Shared structural extensions */
+.deck-slide.deck-slide--dark {
+  background: linear-gradient(180deg, #1e1b18, #151515);
+}
+
+.deck-slide.deck-slide--dark::before {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.deck-slide.deck-slide--dark::after {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.deck-slide--manifesto .slide-inner>div:first-child h1,
+.deck-slide--manifesto .slide-inner>div:first-child h2,
+.deck-slide--manifesto .slide-inner>div:first-child p {
+  color: var(--paper);
+}
+
+.deck-slide--manifesto .slide-inner>div:first-child .eyebrow {
+  background: var(--oxide);
+  color: var(--paper);
+}
+
+.law-strip--signal {
+  border-top-color: var(--signal);
+  background: linear-gradient(90deg,
+      rgba(21, 21, 21, 0.95) 0 56px,
+      rgba(123, 212, 165, 0.07) 56px 100%);
+}
+
+.law-strip--signal::before {
+  content: "↳";
+  font-size: 22pt;
+  color: var(--signal);
+}
+
+.media-card {
+  @include family-deck.framed-media-card(rgba(21, 21, 21, 0.06),
+    var(--line));
+}
+
+@media (max-width: 1180px),
+(max-height: 760px) {
+  .deck-slide {
+    padding: 28px 32px;
+  }
+
+  .slide-inner,
+  .hero .slide-inner {
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-row,
+  .process-row.process-row-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reveal h1 {
+    font-size: 26pt;
+  }
+
+  .reveal h2 {
+    font-size: 20pt;
+  }
+
+  .reveal p,
+  .reveal li {
+    font-size: 13.6pt;
+  }
+
+  .lead {
+    font-size: 14.7pt;
+  }
+}
+
+@media (max-width: 860px) {
+  .deck-slide {
+    padding: 22px 24px;
+  }
+
+  .slide-inner,
+  .hero .slide-inner {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .slide-inner>.eyebrow,
+  .slide-inner>h1,
+  .slide-inner>h2,
+  .slide-inner>.lead,
+  .slide-inner>.hero-grid,
+  .slide-inner>.grid-2,
+  .slide-inner>.grid-3,
+  .slide-inner>.summary-band,
+  .slide-inner>.process-row,
+  .slide-inner>.table-shell,
+  .slide-inner>.quote-panel,
+  .slide-inner>.hero-footer,
+  .slide-inner>.law-strip {
+    grid-column: 1;
+  }
+
+  .deck-slide--manifesto {
+    background:
+      linear-gradient(180deg,
+        rgba(21, 21, 21, 0.95) 0 76px,
+        rgba(21, 21, 21, 0.08) 76px,
+        rgba(21, 21, 21, 0) 120px),
+      linear-gradient(180deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0)),
+      var(--paper);
+  }
+
+  .grid-2,
+  .grid-3,
+  .summary-band,
+  .process-row,
+  .process-row.process-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step:nth-child(2n),
+  .deck-slide--applications .grid-3 .panel:nth-child(2) {
+    transform: none;
+  }
+
+  .hero-footer {
+    justify-content: flex-start;
+  }
+
+  .law-strip {
+    padding-left: 62px;
+    font-size: 15.2pt;
+  }
+
+  .metric-value,
+  .term-word {
+    font-size: 18pt;
+  }
+
+  .nice-table {
+    font-size: 10pt;
+  }
+
+  .nice-table thead th {
+    font-size: 8.2pt;
+  }
+}

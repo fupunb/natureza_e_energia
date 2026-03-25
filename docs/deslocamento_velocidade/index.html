@@ -46,22 +46,20 @@
         <div class="slides">
 
             <!-- CAPA -->
-            <section id="slide-capa" class="deck-slide deck-slide--manifesto hero" data-transition="fade"
-                style="background-image: url('images/quantum-physics-01.webp'); background-size: cover; background-position: center;">
-                <div class="slide-inner"
-                    style="grid-template-columns: 1fr; padding: 60px; background: rgba(5, 5, 8, 0.22); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 0 60px rgba(0,240,255,0.15); display: flex; flex-direction: column; justify-content: space-between;">
+            <section id="slide-capa" class="deck-slide deck-slide--manifesto deck-slide--hero-cover hero"
+                data-transition="fade">
+                <div class="slide-inner slide-inner--hero-cover">
 
                     <!-- Header Group (Left Aligned) -->
-                    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 25px;">
+                    <div class="hero-cover__header">
                         <div class="eyebrow" style="margin: 0;">FUP0407: Mecânica Aplicada às Ciências</div>
 
-                        <div style="display: flex; align-items: center; gap: 20px;">
-                            <img src="../icons/unb.webp" alt="Logo UnB" style="width: 140px; height: auto;">
-                            <div style="border-left: 2px solid var(--neon-cyan); padding-left: 20px;">
-                                <p
-                                    style="margin: 0; font-family: var(--heading-font); font-size: 16pt; color: var(--star-bright); line-height: 1.2; font-weight: 600;">
+                        <div class="hero-cover__brand">
+                            <img src="../icons/unb.webp" alt="Logo UnB" class="hero-cover__logo">
+                            <div class="hero-cover__brand-copy">
+                                <p class="hero-cover__brand-title">
                                     Universidade de Brasília<br>
-                                    <span style="color: var(--neon-cyan); font-weight: 400; font-size: 14pt;">Faculdade
+                                    <span class="hero-cover__brand-subtitle">Faculdade
                                         UnB Planaltina</span>
                                 </p>
                             </div>
@@ -69,26 +67,22 @@
                     </div>
 
                     <!-- Center Title -->
-                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 0;">
-                        <h1
-                            style="font-size: 58pt; color: var(--star-bright); text-align: center; margin: 0; line-height: 1.1; text-shadow: 0 0 30px rgba(0,240,255,0.2);">
-                            Movimento em <br><span style="color: var(--neon-cyan);">Uma Dimensão</span>
+                    <div class="hero-cover__title-wrap" style="padding: 40px 0;">
+                        <h1 class="hero-cover__title">
+                            Movimento em <br><span class="hero-cover__title-accent">Uma Dimensão</span>
                         </h1>
                     </div>
 
                     <!-- Footer Group (Professor) -->
-                    <div style="display: flex; align-items: center; gap: 20px;">
-                        <div class="media-card media-card--avatar"
-                            style="width: 75px; height: 75px; flex-shrink: 0; box-shadow: 0 0 15px var(--neon-cyan-dim);">
+                    <div class="hero-cover__footer">
+                        <div class="media-card media-card--avatar hero-cover__avatar">
                             <img src="https://gravatar.com/avatar/60d294c6125ae4f5859f4b229249ec06?size=500"
-                                alt="avatar" style="opacity: 1;">
+                                alt="avatar">
                         </div>
-                        <div style="text-align: left;">
-                            <div
-                                style="font-family: var(--heading-font); font-weight: 700; color: var(--star-bright); font-size: 18pt;">
+                        <div class="hero-cover__author">
+                            <div class="hero-cover__author-name">
                                 Bernhard G. Enders</div>
-                            <div class="small"
-                                style="color: var(--neon-cyan); letter-spacing: 0.1em; font-weight: 600; margin-top: 5px;">
+                            <div class="small hero-cover__author-role">
                                 PROFESSOR,
                                 FUP/UnB</div>
                         </div>
@@ -97,7 +91,7 @@
             </section>
 
             <!-- OBJETIVOS DE APRENDIZAGEM -->
-            <section id="slide-objetivos" class="deck-slide" data-auto-animate>
+            <section id="slide-objetivos" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Foco de Hoje</div>
                     <h2>Objetivos de Aprendizagem</h2>
@@ -115,7 +109,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/map.jpg" alt="Mapa">
                             </div>
                         </div>
@@ -124,7 +118,7 @@
             </section>
 
             <!-- INTRODUÇÃO -->
-            <section id="slide-introducao" class="deck-slide" data-auto-animate>
+            <section id="slide-introducao" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">A Base da Mecânica</div>
                     <h2>Introdução</h2>
@@ -140,7 +134,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/highway.jpg" alt="Carro em uma estrada reta">
                             </div>
                         </div>
@@ -150,15 +144,16 @@
 
             <!-- CONCEITOS FUNDAMENTAIS -->
             <section id="slide-div-conceitos" class="deck-slide deck-slide--dark" data-transition="fade">
-                <div
-                    style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--signal); color: var(--ink);">A base teórica</div>
-                    <h1 style="font-size: 42pt; color: var(--paper); line-height: 1; margin: 0;">Conceitos Fundamentais
+                <div class="section-divider__content">
+                    <div class="eyebrow eyebrow--cyan-dark">A base teórica
+                    </div>
+                    <h1 class="section-divider__title section-divider__title--xl">Conceitos
+                        Fundamentais
                     </h1>
                 </div>
             </section>
 
-            <section id="slide-particula" class="deck-slide" data-auto-animate>
+            <section id="slide-particula" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Conceitos Fundamentais</div>
                     <h2>Partícula</h2>
@@ -177,7 +172,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/particle.jpg" alt="Partículas abstratas">
                             </div>
                         </div>
@@ -185,23 +180,23 @@
                 </div>
             </section>
 
-            <section id="slide-referencial" class="deck-slide" data-auto-animate>
+            <section id="slide-referencial" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Espaço e Tempo</div>
                     <h2>Referencial e Tempo</h2>
                     <div class="grid-3" style="margin-top: 20px;">
                         <div class="panel fragment fade-up">
-                            <h3><i class="fa-solid fa-compass" style="color:var(--neon-cyan);"></i> Referencial</h3>
+                            <h3><i class="fa-solid fa-compass icon--cyan"></i> Referencial</h3>
                             <p class="small">Sistema de coordenadas (e.g., eixo <em>x</em>) usado para descrever a
                                 posição do corpo.</p>
                         </div>
                         <div class="panel fragment fade-up">
-                            <h3><i class="fa-solid fa-arrows-left-right" style="color:var(--neon-magenta);"></i>
+                            <h3><i class="fa-solid fa-arrows-left-right icon--magenta"></i>
                                 Deslocamento \(\Delta x\)</h3>
                             <p class="small">Variação da posição de um corpo ao longo do tempo.</p>
                         </div>
                         <div class="panel fragment fade-up">
-                            <h3><i class="fa-solid fa-clock" style="color:var(--neon-violet);"></i> Intervalo \(\Delta
+                            <h3><i class="fa-solid fa-clock icon--violet"></i> Intervalo \(\Delta
                                 t\)</h3>
                             <p class="small">Duração do movimento. Intervalo de tempo durante o qual o movimento ocorre.
                             </p>
@@ -212,15 +207,14 @@
 
             <!-- POSIÇÃO E DESLOCAMENTO -->
             <section id="slide-div-posicao" class="deck-slide deck-slide--dark" data-transition="fade">
-                <div
-                    style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--signal); color: var(--ink);">Métrica</div>
-                    <h1 style="font-size: 38pt; color: var(--paper); line-height: 1.05; margin: 0;">Posição e
+                <div class="section-divider__content">
+                    <div class="eyebrow eyebrow--cyan-dark">Métrica</div>
+                    <h1 class="section-divider__title section-divider__title--lg">Posição e
                         Deslocamento</h1>
                 </div>
             </section>
 
-            <section id="slide-pos-desloc" class="deck-slide" data-auto-animate>
+            <section id="slide-pos-desloc" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Medindo o Movimento</div>
                     <h2>A mudança de posição</h2>
@@ -237,8 +231,8 @@
                         </div>
                         <div>
                             <div class="equation-plate fragment fade-up">
-                                <p style="font-size:22pt; letter-spacing: 0.04em;">\(\Delta x = x_f - x_i\)</p>
-                                <p style="margin-top: 10px; font-size: 12pt;">
+                                <p class="equation-text--lg">\(\Delta x = x_f - x_i\)</p>
+                                <p class="equation-caption" style="margin-top: 10px;">
                                     <strong>\(\Delta x\)</strong>: deslocamento &nbsp;|&nbsp; <strong>\(x_f\)</strong>:
                                     posição final &nbsp;|&nbsp; <strong>\(x_i\)</strong>: posição inicial
                                 </p>
@@ -248,7 +242,7 @@
                 </div>
             </section>
 
-            <section id="slide-distancia" class="deck-slide" data-auto-animate>
+            <section id="slide-distancia" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Diferença Crucial</div>
                     <h2>Deslocamento vs Distância</h2>
@@ -268,8 +262,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="law-strip law-strip--signal fragment fade-up"
-                        style="margin-top: 20px; font-size: 14pt;">
+                    <div class="law-strip law-strip--signal law-strip--sm fragment fade-up" style="margin-top: 20px;">
                         <strong>Exemplo Prático:</strong> Um estudante de bicicleta se move em linha reta de \(x_i =
                         1\,\text{m}\) para \(x_f = 3\,\text{m}\). O deslocamento é dado por \(\Delta x = 3 - 1 =
                         2\,\text{m}\).
@@ -277,7 +270,7 @@
                 </div>
             </section>
 
-            <section id="slide-cachorro" class="deck-slide" data-auto-animate>
+            <section id="slide-cachorro" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Exemplo Comparativo</div>
                     <h2>O Cachorro e o Graveto</h2>
@@ -285,18 +278,16 @@
                         <div>
                             <p class="lead">Exemplo (Distância × Deslocamento): Um cachorro corre 20 m para buscar um
                                 graveto e retorna 15 m, sempre em linha reta.</p>
-                            <div class="panel fragment fade-up"
-                                style="margin-top: 20px; border-left: 3px solid var(--neon-cyan);">
+                            <div class="panel panel--signal fragment fade-up" style="margin-top: 20px;">
                                 <p><b>‣ Distância total:</b> \(20\,\text{m} + 15\,\text{m} = 35\,\text{m}\)</p>
                                 <p><b>‣ Deslocamento:</b> \(+20\,\text{m} + (-15\,\text{m}) = +5\,\text{m}\) <br><span
                                         class="small">(na direção inicial)</span></p>
                             </div>
-                            <p class="small fragment fade-up"
-                                style="margin-top: 15px; font-style: italic; color: var(--star-dim);"><b>Observação:</b>
+                            <p class="small small-note fragment fade-up" style="margin-top: 15px;"><b>Observação:</b>
                                 A distância é sempre maior ou igual ao módulo do deslocamento.</p>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/dog.jpg" alt="Cachorro buscando graveto">
                             </div>
                         </div>
@@ -305,17 +296,17 @@
             </section>
 
             <!-- VELOCIDADE MÉDIA -->
-            <section id="slide-div-vel-media" class="deck-slide deck-slide--dark" data-transition="fade">
-                <div
-                    style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--neon-cyan); color: var(--void-deep);">Taxa de variação
+            <section id="slide-div-vel-media" class="deck-slide deck-slide--dark">
+                <div class="section-divider__content">
+                    <div class="eyebrow eyebrow--cyan-dark">Taxa de variação
                     </div>
-                    <h1 style="font-size: 38pt; color: var(--paper); line-height: 1.05; margin: 0;">Velocidade Média
+                    <h1 class="section-divider__title section-divider__title--lg">Velocidade
+                        Média
                     </h1>
                 </div>
             </section>
 
-            <section id="slide-vel-media" class="deck-slide" data-auto-animate>
+            <section id="slide-vel-media" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">A grandeza vetorial</div>
                     <h2>Velocidade Média (\(v_m\))</h2>
@@ -332,16 +323,16 @@
                         </div>
                         <div>
                             <div class="equation-plate fragment fade-up">
-                                <p style="font-size:22pt; letter-spacing: 0.04em;">\(\displaystyle v_{m} = \frac{\Delta
+                                <p class="equation-text--lg">\(\displaystyle v_{m} = \frac{\Delta
                                     x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}\)</p>
                             </div>
                         </div>
                     </div>
-                    <div class="law-strip fragment fade-up" style="margin-top: 20px; font-size: 13pt;">
+                    <div class="law-strip law-strip--xs fragment fade-up" style="margin-top: 20px;">
                         <strong>Exemplo:</strong> Um carro parte do ponto \(x_1 = 0\,\text{m}\) e chega ao ponto \(x_2 =
                         100\,\text{m}\) em \(\Delta t = 20\,\text{s}\).<br>
                         \(\displaystyle v_{m} = \frac{100 - 0}{20} = 5\,\text{m/s}\) <br>
-                        <span class="small" style="color:var(--star-dim);">Se o carro voltasse ao ponto inicial, o
+                        <span class="small">Se o carro voltasse ao ponto inicial, o
                             deslocamento seria zero e a velocidade média também.</span>
                     </div>
                 </div>
@@ -349,16 +340,16 @@
 
             <!-- VELOCIDADE INSTANTÂNEA -->
             <section id="slide-div-vel-inst" class="deck-slide deck-slide--dark" data-transition="fade">
-                <div
-                    style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--neon-magenta); color: var(--paper);">O instante exato
+                <div class="section-divider__content">
+                    <div class="eyebrow eyebrow--magenta-light">O instante
+                        exato
                     </div>
-                    <h1 style="font-size: 38pt; color: var(--paper); line-height: 1.05; margin: 0;">Velocidade
+                    <h1 class="section-divider__title section-divider__title--lg">Velocidade
                         Instantânea</h1>
                 </div>
             </section>
 
-            <section id="slide-vel-inst" class="deck-slide" data-auto-animate>
+            <section id="slide-vel-inst" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">No limite matemático</div>
                     <h2>Velocidade no limite</h2>
@@ -375,10 +366,10 @@
                         </div>
                         <div>
                             <div class="equation-plate fragment fade-up">
-                                <p style="font-size:20pt; letter-spacing: 0.04em;">\(\displaystyle v = \lim_{\Delta t
+                                <p class="equation-text--md">\(\displaystyle v = \lim_{\Delta t
                                     \to 0} \frac{\Delta x}{\Delta t} = \frac{dx}{dt}\)</p>
                             </div>
-                            <div class="media-card fragment fade-up" style="margin-top: 15px; max-height: 180px;">
+                            <div class="media-card media-card--short fragment fade-up" style="margin-top: 15px;">
                                 <img src="images/speedometer.jpg" alt="Velocímetro">
                             </div>
                         </div>
@@ -386,7 +377,7 @@
                 </div>
             </section>
 
-            <section id="slide-vel-inst-ex" class="deck-slide" data-auto-animate>
+            <section id="slide-vel-inst-ex" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Aplicação</div>
                     <h2>Calculando a Instantânea</h2>
@@ -398,15 +389,14 @@
                                 <h3>Derivando a equação</h3>
                                 <p>\(\displaystyle v(t) = \frac{dx}{dt} = \frac{d}{dt}(5t^2) = 10t\)</p>
                             </div>
-                            <div class="panel fragment fade-up"
-                                style="margin-top: 15px; border-left: 3px solid var(--neon-cyan);">
+                            <div class="panel panel--signal fragment fade-up" style="margin-top: 15px;">
                                 <h3>Para um instante \(\mathbf{t = 2\,\text{s}}\)</h3>
-                                <p style="font-weight: bold; color: var(--star-bright);">\(v(2) = 10
+                                <p class="result-highlight">\(v(2) = 10
                                     \times 2 = 20\,\text{m/s}\)</p>
                             </div>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/running.jpg" alt="Atleta correndo em uma pista">
                             </div>
                         </div>
@@ -415,7 +405,7 @@
             </section>
 
             <!-- RAPIDEZ E ESCALARES -->
-            <section id="slide-rapidez" class="deck-slide" data-auto-animate>
+            <section id="slide-rapidez" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Outra Grandeza</div>
                     <h2>Rapidez Média (\(s_m\))</h2>
@@ -424,7 +414,7 @@
                             <p class="lead"><strong>Rapidez média</strong> é a razão entre a <em>distância total</em>
                                 percorrida e o tempo total:</p>
                             <div class="equation-plate fragment fade-up">
-                                <p style="font-size:18pt; letter-spacing: 0.04em;">\(\displaystyle s_{m} =
+                                <p class="equation-text--sm">\(\displaystyle s_{m} =
                                     \frac{\text{distância total}}{\Delta t}\)</p>
                             </div>
                             <p class="fragment fade-up" style="margin-top: 15px;"><strong>Diferença:</strong> Rapidez é
@@ -444,32 +434,32 @@
                 </div>
             </section>
 
-            <section id="slide-diferencas" class="deck-slide" data-auto-animate>
+            <section id="slide-diferencas" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">SÍNTESE e Revisão</div>
                     <h2>Diferenças Fundamentais</h2>
                     <div class="process-row process-row-4" style="margin-top: 20px;">
                         <div class="process-step fragment fade-up">
-                            <h3 style="color:var(--neon-cyan); font-size: 14pt;">Deslocamento (\(\Delta x\))</h3>
+                            <h3 class="process-step__title process-step__title--cyan">Deslocamento (\(\Delta x\))</h3>
                             <p class="small">Mudança de posição. Pode ser positivo ou negativo, depende da direção.</p>
                         </div>
                         <div class="process-step fragment fade-up">
-                            <h3 style="color:var(--star-bright); font-size: 14pt;">Distância</h3>
+                            <h3 class="process-step__title process-step__title--bright">Distância</h3>
                             <p class="small">Caminho total percorrido. Sempre acumulativa e positiva.</p>
                         </div>
                         <div class="process-step fragment fade-up">
-                            <h3 style="color:var(--neon-magenta); font-size: 14pt;">Velocidade</h3>
+                            <h3 class="process-step__title process-step__title--magenta">Velocidade</h3>
                             <p class="small">Mede quão rápido e em que direção ocorre o deslocamento.</p>
                         </div>
                         <div class="process-step fragment fade-up">
-                            <h3 style="color:var(--star-dim); font-size: 14pt;">Rapidez</h3>
+                            <h3 class="process-step__title process-step__title--dim">Rapidez</h3>
                             <p class="small">Mede apenas quão rápido o objeto se move, sem considerar direção.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="slide-dicas" class="deck-slide" data-auto-animate>
+            <section id="slide-dicas" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Atenção Crítica</div>
                     <h2>Dicas e Cuidados</h2>
@@ -486,7 +476,7 @@
                             </ul>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/bike.jpg" alt="Ciclista">
                             </div>
                         </div>
@@ -496,15 +486,15 @@
 
             <!-- EXERCÍCIOS -->
             <section id="slide-div-exercicios" class="deck-slide deck-slide--dark" data-transition="fade">
-                <div
-                    style="display:flex; flex-direction:column; align-items:center; justify-content:center; flex:1; min-height:0; text-align:center; gap: 24px;">
-                    <div class="eyebrow" style="background: var(--neon-cyan); color: var(--void-deep);">Prática
+                <div class="section-divider__content">
+                    <div class="eyebrow eyebrow--cyan-dark">Prática
                         Computacional</div>
-                    <h1 style="font-size: 38pt; color: var(--paper); line-height: 1.05; margin: 0;">Exercícios</h1>
+                    <h1 class="section-divider__title section-divider__title--lg">Exercícios
+                    </h1>
                 </div>
             </section>
 
-            <section id="slide-cheetah-1" class="deck-slide" data-auto-animate>
+            <section id="slide-cheetah-1" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Exercício Resolvido</div>
                     <h2>O Guepardo</h2>
@@ -513,7 +503,7 @@
                             <p class="lead">Um guepardo parte de \(x_0 = 20\,\text{m}\) e sua posição varia com o tempo:
                             </p>
                             <div class="equation-plate fragment fade-up">
-                                <p style="font-size: 20pt;">\(x(t) = 20 + 10t^2\)</p>
+                                <p class="equation-text--md">\(x(t) = 20 + 10t^2\)</p>
                             </div>
                             <div class="panel fragment fade-up" style="margin-top: 15px;">
                                 <p><b>Dados:</b> \(t_1 = 1,0\,\text{s}\), \(t_2 = 2,0\,\text{s}\)</p>
@@ -522,7 +512,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/cheetah.jpg" alt="Guepardo correndo">
                             </div>
                         </div>
@@ -530,7 +520,7 @@
                 </div>
             </section>
 
-            <section id="slide-cheetah-2" class="deck-slide" data-auto-animate>
+            <section id="slide-cheetah-2" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Resolução</div>
                     <h2>Guepardo (Parte 1 e 2)</h2>
@@ -540,17 +530,16 @@
                             <p class="small">Entre \(t = 1,0\,\text{s}\) e \(t = 2,0\,\text{s}\):</p>
                             <p>\(\Delta x = x(2,0) - x(1,0)\)</p>
                             <p>\(\Delta x = [20 + 10(4)] - [20 + 10(1)]\)</p>
-                            <p style="color:var(--star-bright); font-weight:bold;">\(\Delta x = 60 - 30 = 30\,\text{m}\)
+                            <p class="result-highlight">\(\Delta x = 60 - 30 = 30\,\text{m}\)
                             </p>
                         </div>
                         <div class="panel fragment fade-left">
                             <h3>2. Velocidade Média</h3>
                             <p>\(\displaystyle v_m = \frac{30\,\text{m}}{1,0\,\text{s}}\)</p>
-                            <p style="color:var(--star-bright); font-weight:bold; font-size: 18pt;">\(v_m =
+                            <p class="result-highlight result-highlight--lg">\(v_m =
                                 30\,\text{m/s}\)</p>
                         </div>
-                        <div class="panel fragment fade-up"
-                            style="grid-column: 1 / -1; border-left: 3px solid var(--neon-magenta);">
+                        <div class="panel panel--magenta panel--full-width fragment fade-up">
                             <h3>3. Velocidade Instantânea (em \(t = 2,0\,\text{s}\))</h3>
                             <p>\(\displaystyle v = \frac{dx}{dt} = 20t \implies v(2,0) = 40\,\text{m/s}\)</p>
                         </div>
@@ -558,7 +547,7 @@
                 </div>
             </section>
 
-            <section id="slide-proposto" class="deck-slide" data-auto-animate>
+            <section id="slide-proposto" class="deck-slide">
                 <div class="slide-inner">
                     <div class="eyebrow">Desafio para Você</div>
                     <h2>Exercício Proposto</h2>
@@ -569,7 +558,7 @@
                                 20 s.</p>
                             <div class="law-strip law-strip--signal" style="margin-top: 20px;">
                                 <b>Calcule:</b>
-                                <ol style="margin-left: 20px; font-size: 14pt;">
+                                <ol class="exercise-list" style="margin-left: 20px;">
                                     <li class="fragment fade-up">A distância total percorrida.</li>
                                     <li class="fragment fade-up">O deslocamento total.</li>
                                     <li class="fragment fade-up">A rapidez média e a velocidade média no percurso total.
@@ -578,7 +567,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="media-card" style="height: 100%;">
+                            <div class="media-card media-card--fill">
                                 <img src="images/highway.jpg" alt="Carro na estrada">
                             </div>
                         </div>
@@ -620,10 +609,13 @@
             autoAnimate: true,
             autoAnimateEasing: 'ease-in-out',
             autoAnimateDuration: 0.7,
-            backgroundTransition: 'concave',
-            transition: 'concave',
+            backgroundTransition: 'none',
+            transition: 'zoom',
             transitionSpeed: 'slow',
-            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX]
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.KaTeX],
+            parallaxBackgroundImage: './images/quantum-physics-01.webp',
+            parallaxBackgroundHorizontal: 75,
+            parallaxBackgroundVertical: 50,
         });
     </script>
 </body>

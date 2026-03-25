@@ -1,0 +1,197 @@
+@mixin css-vars($vars) {
+  @each $name, $value in $vars {
+    --#{$name}: #{$value};
+  }
+}
+
+@mixin reveal-surface($background, $text-color, $body-font) {
+
+  html,
+  body,
+  .reveal-viewport {
+    min-height: 100%;
+    background: $background;
+    color: $text-color;
+    font-family: $body-font;
+  }
+}
+
+@mixin reveal-shell($text-color,
+  $body-font,
+  $heading-font,
+  $heading-color,
+  $slides-text-align: left,
+  $progress-color: null,
+  $progress-height: null,
+  $progress-shadow: null,
+  $controls-color: null,
+  $controls-hover-color: null,
+  $strong-color: null,
+  $strong-weight: 600,
+  $body-line-height: 1.6,
+  $heading-letter-spacing: -0.01em,
+  $heading-line-height: 1.05,
+  $h1-size: var(--h1-size),
+  $h2-size: var(--h2-size),
+  $h3-size: var(--h3-size),
+  $slides-counter: deck-slide,
+  $edge-highlight: null,
+  $edge-height: 2px) {
+  $resolved-strong-color: $heading-color;
+
+  @if $strong-color !=null {
+    $resolved-strong-color: $strong-color;
+  }
+
+  .reveal {
+    color: $text-color;
+    font-family: $body-font;
+
+    .slides {
+      text-align: $slides-text-align;
+
+      @if $slides-counter !=null {
+        counter-reset: $slides-counter;
+      }
+
+      section {
+        box-sizing: border-box;
+        height: 100%;
+      }
+
+      @if $edge-highlight !=null {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: $edge-height;
+          background: $edge-highlight;
+          opacity: 0.7;
+          z-index: 100;
+          pointer-events: none;
+        }
+      }
+    }
+
+    @if $progress-color !=null {
+      .progress {
+        color: $progress-color;
+
+        @if $progress-height !=null {
+          height: $progress-height;
+        }
+
+        @if $progress-shadow !=null {
+          box-shadow: $progress-shadow;
+        }
+      }
+    }
+
+    @if $controls-color !=null {
+      .controls {
+        color: $controls-color;
+
+        @if $controls-hover-color !=null {
+          &:hover {
+            color: $controls-hover-color;
+          }
+        }
+      }
+    }
+
+    strong,
+    b {
+      color: $resolved-strong-color;
+      font-weight: $strong-weight;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      font-family: $body-font;
+      font-weight: 300;
+      line-height: $body-line-height;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      color: $heading-color;
+      font-family: $heading-font;
+      font-weight: 700;
+      letter-spacing: $heading-letter-spacing;
+      line-height: $heading-line-height;
+    }
+
+    h1 {
+      font-size: $h1-size;
+    }
+
+    h2 {
+      font-size: $h2-size;
+    }
+
+    h3 {
+      margin: 0 0 0.5em;
+      color: $heading-color;
+      font-family: $heading-font;
+      font-size: $h3-size;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    p,
+    li {
+      margin: 0;
+      font-size: var(--body-size);
+    }
+  }
+}
+
+@mixin clean-list($marker,
+  $marker-color,
+  $marker-font,
+  $marker-shadow: null,
+  $item-gap: 14px,
+  $item-indent: 28px) {
+  .reveal ul.clean {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin: 0 0 $item-gap;
+      padding-left: $item-indent;
+
+      &::before {
+        content: $marker;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-flex;
+        align-items: center;
+        height: 1.5em;
+        font-size: 1em;
+        color: $marker-color;
+        font-family: $marker-font;
+
+        @if $marker-shadow !=null {
+          text-shadow: $marker-shadow;
+        }
+      }
+    }
+  }
+}
+
+@mixin icon-utilities($icons) {
+  @each $name, $color in $icons {
+    .icon--#{$name} {
+      color: $color;
+    }
+  }
+}
