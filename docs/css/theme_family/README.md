@@ -36,6 +36,7 @@ Build one theme only:
 
 ```bash
 ./scripts/build-reveal-themes.sh signal_ledger
+./scripts/build-reveal-themes.sh amber_magnet
 ./scripts/build-reveal-themes.sh theme_quantum_cosmos.scss
 ```
 
@@ -71,13 +72,13 @@ $accent: #00e5ff;
 
 :root {
   @include family-core.css-vars((
-    text: $text,
-    accent: $accent,
-    body-size: 14pt,
-    h1-size: 36pt,
-    h2-size: 26pt,
-    h3-size: 14pt,
-    meta-size: 10pt
+    "text": $text,
+    "accent": $accent,
+    "body-size": 14pt,
+    "h1-size": 36pt,
+    "h2-size": 26pt,
+    "h3-size": 14pt,
+    "meta-size": 10pt
   ));
 }
 
@@ -105,5 +106,12 @@ $accent: #00e5ff;
 
 ## Current Members
 
+- `docs/css/theme_amber_magnet.scss`
 - `docs/css/theme_quantum_cosmos.scss`
 - `docs/css/theme_signal_ledger.scss`
+
+## Naming Notes
+
+- Prefer names that describe the theme's visual identity or palette, not generic labels like `theme_base`.
+- `theme_amber_magnet.scss` is the canonical family-theme successor to the old `theme_base.css`.
+- Keep the legacy CSS file only as a historical reference or fallback while decks migrate.
