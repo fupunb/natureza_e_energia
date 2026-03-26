@@ -142,10 +142,11 @@ $amber-magnet-background:
 @include family-deck.standard-grids(24px);
 @include family-deck.small-text(var(--muted), 0.75em);
 
-.reveal p,
-.reveal li,
-.reveal td,
-.reveal th {
+.reveal p {
+  margin: var(--r-block-margin) 0;
+}
+
+.reveal :where(p, li, td, th) {
   color: var(--muted);
   font-weight: 400;
 }
@@ -245,7 +246,8 @@ strong {
   background: linear-gradient(90deg, transparent, var(--teal), transparent);
 }
 
-.lead {
+.lead,
+.reveal p.lead {
   font-size: var(--lead-size);
   max-width: 44em;
   color: #eee3d2;
@@ -312,7 +314,8 @@ strong {
   max-width: 27em;
 }
 
-.kicker {
+.kicker,
+.reveal p.kicker {
   color: var(--gold);
   font-size: 0.88em;
   font-weight: 600;

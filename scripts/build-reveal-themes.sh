@@ -126,6 +126,7 @@ build_theme() {
 main() {
   local -a sources=()
   local resolved
+  local theme
 
   case "${1:-}" in
     --help|-h)
