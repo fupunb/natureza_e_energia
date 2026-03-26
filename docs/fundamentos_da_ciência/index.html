@@ -67,11 +67,8 @@
             <div class="image-stack">
               <figure class="media-card fragment fade-up">
                 <img src="Copernico.png" alt="Imagem de Copérnico" loading="eager" decoding="async">
-                <figcaption>Copérnico desloca a Terra do centro e abre espaço para pensar de outro jeito.</figcaption>
-              </figure>
-              <figure class="media-card fragment fade-up">
-                <img src="gutenberg-prensa.webp" alt="Prensa de Gutenberg" loading="lazy" decoding="async">
-                <figcaption>A prensa multiplica a circulação de conhecimento.</figcaption>
+                <figcaption>Copérnico remove a Terra do centro da galáxia e abre espaço para pensar de outro jeito.
+                </figcaption>
               </figure>
             </div>
           </div>
@@ -114,7 +111,8 @@
               <p>Organizar a melhor explicação compatível com as evidências.</p>
             </div>
           </div>
-          <div class="quote-panel fragment fade-up">
+          <div class="quote-panel fragment fade-up" data-fragment-modal="auto" data-modal-label="Citação ampliada"
+            data-modal-symbol="💡">
             <p class="quote-text">Equações não são a ciência inteira. Elas entram para organizar relações entre
               grandezas, funcionando como guias para o pensamento.</p>
           </div>
@@ -124,7 +122,7 @@
       <section class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">3. A regra de ouro</div>
-          <h2>Uma hipótese científica precisa poder falhar</h2>
+          <h2>Uma hipótese científica pode falhar</h2>
           <div class="claim-grid">
             <div class="claim-card bad">
               <div class="claim-head">Não científico</div>
@@ -169,9 +167,8 @@
                 passa a exigir evidência.</p>
             </div>
           </div>
-          <div class="quote-panel fragment fade-up">
-            <p class="quote-text">A discussão filosófica é importante, mas é o experimento que decide o que pode ser
-              aceito como conhecimento científico.</p>
+          <div class="callout-strip fragment fade-up">A discussão filosófica é importante, mas é o experimento que
+            decide o que pode ser aceito como conhecimento científico.
           </div>
         </div>
       </section>
@@ -609,6 +606,243 @@
       transition: 'concave',    // Transition between slides (default, fade, slide, convex, concave, zoom)
       transitionSpeed: 'slow'    // Transition speed (default, fast, slow)      
     });
+  </script>
+  <script>
+    (() => {
+      const deck = document.querySelector('.reveal');
+      const viewport = document.querySelector('.reveal-viewport') || document.body;
+      if (!deck || typeof Reveal === 'undefined') return;
+
+      const modal = document.createElement('div');
+      modal.className = 'fragment-modal';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.innerHTML = `
+        <div class="fragment-modal__backdrop" data-fragment-modal-close></div>
+        <div class="fragment-modal__dialog" role="dialog" aria-modal="true" aria-label="Conteudo ampliado">
+          <button class="fragment-modal__close" type="button" aria-label="Fechar ampliacao" data-fragment-modal-close>&times;</button>
+          <div class="fragment-modal__header" hidden>
+            <span class="fragment-modal__symbol" aria-hidden="true"></span>
+            <div class="fragment-modal__label"></div>
+          </div>
+          <div class="fragment-modal__content"></div>
+        </div>
+      `;
+      viewport.appendChild(modal);
+
+      const content = modal.querySelector('.fragment-modal__content');
+      const dialog = modal.querySelector('.fragment-modal__dialog');
+      const header = modal.querySelector('.fragment-modal__header');
+      const symbol = modal.querySelector('.fragment-modal__symbol');
+      const label = modal.querySelector('.fragment-modal__label');
+      const closeTargets = modal.querySelectorAll('[data-fragment-modal-close]');
+      const modalFragments = Array.from(deck.querySelectorAll('[data-fragment-modal]'));
+
+      let activeSource = null;
+      const dismissedSources = new WeakSet();
+
+      const getModalSource = (element) => {
+        if (!(element instanceof HTMLElement)) return null;
+        return element.closest('[data-fragment-modal]');
+      };
+
+      const getViewportRect = () => {
+        const viewportRect = viewport.getBoundingClientRect();
+        return {
+          top: viewportRect.top,
+          right: viewportRect.right,
+          bottom: viewportRect.bottom,
+          left: viewportRect.left
+        };
+      };
+
+      const isElementFullyVisible = (element) => {
+        const rect = element.getBoundingClientRect();
+        const bounds = getViewportRect();
+        const tolerance = 10;
+
+        return rect.top >= bounds.top + tolerance &&
+          rect.left >= bounds.left + tolerance &&
+          rect.bottom <= bounds.bottom - tolerance &&
+          rect.right <= bounds.right - tolerance;
+      };
+
+      const shouldOpenModal = (source) => {
+        const mode = source.getAttribute('data-fragment-modal') || 'auto';
+        if (mode === 'always') return true;
+        if (mode === 'auto') return !isElementFullyVisible(source);
+        return false;
+      };
+
+      const isFragmentShown = (source) =>
+        source.classList.contains('visible') || source.classList.contains('current-fragment');
+
+      const closeModal = ({ dismissed = false } = {}) => {
+        if (!activeSource) return false;
+
+        if (dismissed) {
+          dismissedSources.add(activeSource);
+        }
+
+        modal.classList.remove('is-visible');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('has-fragment-modal');
+        header.hidden = true;
+        symbol.textContent = '';
+        label.textContent = '';
+        content.replaceChildren();
+        activeSource.classList.remove('fragment-modal-source', 'fragment-modal-source--hidden');
+        activeSource = null;
+        return true;
+      };
+
+      const openModal = (source) => {
+        if (!(source instanceof HTMLElement)) return;
+
+        if (activeSource === source && modal.classList.contains('is-visible')) {
+          return;
+        }
+
+        closeModal();
+
+        const clone = source.cloneNode(true);
+        clone.classList.remove('fragment', 'fade-up', 'current-fragment', 'visible');
+        clone.classList.add('fragment-modal__clone');
+        clone.removeAttribute('id');
+        clone.querySelectorAll('[id]').forEach((node) => node.removeAttribute('id'));
+
+        const modalLabel = source.getAttribute('data-modal-label') || 'Conteudo ampliado';
+        const modalSymbol = source.getAttribute('data-modal-symbol') || '';
+
+        dismissedSources.delete(source);
+        activeSource = source;
+        content.replaceChildren(clone);
+        dialog.setAttribute('aria-label', modalLabel);
+        label.textContent = modalLabel;
+        symbol.textContent = modalSymbol;
+        header.hidden = !(modalLabel || modalSymbol);
+
+        source.classList.add('fragment-modal-source', 'fragment-modal-source--hidden');
+        modal.classList.add('is-visible');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('has-fragment-modal');
+      };
+
+      const maybeOpenForFragment = (element) => {
+        const source = getModalSource(element);
+        if (!source || !isFragmentShown(source) || dismissedSources.has(source)) return;
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (shouldOpenModal(source)) {
+              openModal(source);
+            } else if (activeSource === source) {
+              closeModal();
+            }
+          });
+        });
+      };
+
+      closeTargets.forEach((target) => {
+        target.addEventListener('click', () => closeModal({ dismissed: true }));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!activeSource) return;
+
+        if (event.key === 'Escape' || event.key === ' ' || event.code === 'Space' ||
+          event.key === 'PageDown' || event.key === 'PageUp') {
+          event.preventDefault();
+          event.stopPropagation();
+          closeModal({ dismissed: true });
+        }
+      }, true);
+
+      Reveal.on('ready', () => {
+        const currentFragment = deck.querySelector('.present [data-fragment-modal].fragment.visible');
+        if (currentFragment) {
+          maybeOpenForFragment(currentFragment);
+        }
+      });
+
+      Reveal.on('fragmentshown', (event) => {
+        maybeOpenForFragment(event.fragment);
+      });
+
+      Reveal.on('fragmenthidden', (event) => {
+        const source = getModalSource(event.fragment);
+        if (source) {
+          dismissedSources.delete(source);
+        }
+        if (source && activeSource === source) {
+          closeModal();
+        }
+      });
+
+      Reveal.on('slidechanged', () => {
+        closeModal();
+        const currentFragment = deck.querySelector('.present [data-fragment-modal].fragment.visible');
+        if (currentFragment) {
+          maybeOpenForFragment(currentFragment);
+        }
+      });
+
+      Reveal.on('overviewshown', closeModal);
+      Reveal.on('paused', closeModal);
+
+      window.addEventListener('resize', () => {
+        if (!activeSource) return;
+
+        requestAnimationFrame(() => {
+          if (shouldOpenModal(activeSource)) {
+            openModal(activeSource);
+          } else {
+            closeModal();
+          }
+        });
+      });
+
+      deck.addEventListener('click', (event) => {
+        const source = getModalSource(event.target);
+        if (!source || !isFragmentShown(source)) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        openModal(source);
+      });
+
+      const observer = new MutationObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!(entry.target instanceof HTMLElement)) return;
+
+          const source = getModalSource(entry.target);
+          if (!source) return;
+
+          if (!isFragmentShown(source)) {
+            dismissedSources.delete(source);
+          }
+
+          if (isFragmentShown(source) && shouldOpenModal(source)) {
+            maybeOpenForFragment(source);
+            return;
+          }
+
+          if (!isFragmentShown(source) && activeSource === source) {
+            closeModal();
+          }
+        });
+      });
+
+      modalFragments.forEach((fragment) => {
+        observer.observe(fragment, { attributes: true, attributeFilter: ['class'] });
+      });
+
+      window.setTimeout(() => {
+        const forcedFragment = deck.querySelector('.present [data-fragment-modal="always"].fragment');
+        if (forcedFragment && isFragmentShown(forcedFragment) && !dismissedSources.has(forcedFragment)) {
+          openModal(forcedFragment);
+        }
+      }, 80);
+    })();
   </script>
   <script>
     (() => {

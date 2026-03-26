@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>História da Física: De Aristóteles a Newton</title>
+  <title>Cinemática: De Aristóteles a Newton</title>
   <!--  favicons -->
   <link rel="icon" href="../icons/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
@@ -13,14 +13,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="../icons/android-chrome-512x512.png">
   <!-- Reveal.js core -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="../css/theme_physics.css">
+  <!-- Quantum Cosmos theme -->
+  <link rel="stylesheet" href="../css/theme_quantum_cosmos.css">
 
   <!-- Chart.js for data visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -30,20 +30,61 @@
   <div class="reveal">
     <div class="slides">
 
+      <!-- CAPA -->
+      <section id="slide-capa" class="deck-slide deck-slide--manifesto deck-slide--hero-cover hero"
+        data-transition="fade">
+        <div class="slide-inner slide-inner--hero-cover">
+          <div class="hero-cover__header">
+            <div class="eyebrow" style="margin: 0;">FUP0321: NATUREZA E ENERGIA</div>
+
+            <div class="hero-cover__brand">
+              <img src="../icons/unb.webp" alt="Logo UnB" class="hero-cover__logo">
+              <div class="hero-cover__brand-copy">
+                <p class="hero-cover__brand-title">
+                  Universidade de Brasília<br>
+                  <span class="hero-cover__brand-subtitle">Faculdade UnB Planaltina</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cover__title-wrap" style="padding: 28px 0 36px;">
+            <h1 class="hero-cover__title">
+              A história da <br><span class="hero-cover__title-accent">cinemática</span>
+            </h1>
+            <div class="hero-subtitle">De Aristóteles a Newton</div>
+          </div>
+
+          <div class="hero-cover__footer">
+            <div class="media-card media-card--avatar hero-cover__avatar">
+              <img src="https://gravatar.com/avatar/60d294c6125ae4f5859f4b229249ec06?size=500" alt="avatar">
+            </div>
+            <div class="hero-cover__author">
+              <div class="hero-cover__author-name">Bernhard G. Enders</div>
+              <div class="small hero-cover__author-role">PROFESSOR, FUP/UnB</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Slide 1 -->
-      <section id="slide-1" class="deck-slide hero">
+      <section id="slide-1" class="deck-slide deck-slide--story-intro">
         <div class="slide-inner">
           <div class="hero-grid">
-            <div>
-              <h1 style="font-size: 3.5em;">A história da cinemática</h1>
-              <h2 style="font-size: 1.8em; color: var(--magenta); margin-top: 20px;">De Aristóteles a Newton</h2>
-              <p class="lead" style="margin-top: 30px;">Como a humanidade aprendeu a descrever o movimento</p>
+            <div class="story-intro__copy">
+              <div class="eyebrow">Panorama histórico</div>
+              <div class="story-intro__title">
+                <span>A história da</span>
+                <span class="story-intro__title-accent">cinemática</span>
+              </div>
+              <div class="story-intro__subtitle">De Aristóteles a Newton</div>
+              <p class="story-intro__kicker">Como a humanidade aprendeu a descrever o movimento.</p>
             </div>
             <div class="panel accent-cyan">
               <ul class="clean">
                 <li>Do senso comum à matemática</li>
                 <li>Da queda dos corpos às leis do movimento</li>
-                <li>Uma história de erros brilhantes, experimentos e revoluções conceituais</li>
+                <li>Uma história de erros, experimentos e revoluções conceituais</li>
               </ul>
             </div>
           </div>
@@ -59,17 +100,18 @@
       <!-- Slide 2 -->
       <section id="slide-2" class="deck-slide">
         <div class="slide-inner">
-          <h2>O movimento parece simples. Mas é?</h2>
+          <h2>O movimento parece simples. Mas será que ele é?</h2>
           <div class="grid-2">
-            <div class="panel">
+            <div class="panel accent-cyan">
+              <h3>Observações:</h3>
               <ul class="clean">
                 <li>Uma bola rola e para.</li>
-                <li>Uma pedra cai.</li>
-                <li>Uma flecha continua após sair do arco.</li>
-                <li>A Lua não cai sobre a Terra.</li>
+                <li class="fragment">Uma pedra cai.</li>
+                <li class="fragment">Uma flecha continua após sair do arco.</li>
+                <li class="fragment">A Lua não cai sobre a Terra.</li>
               </ul>
             </div>
-            <div class="panel accent-magenta">
+            <div class="panel accent-magenta fragment">
               <h3>Pergunta:</h3>
               <p>Existe uma única explicação para todos esses movimentos?</p>
             </div>
@@ -93,18 +135,18 @@
             <h2>Aristóteles: o primeiro grande sistema sobre o movimento</h2>
           </div>
           <div class="grid-2">
-            <div class="panel">
+            <div class="panel accent-cyan fragment fade-up">
               <h3 style="color: var(--cyan);">Movimento Natural</h3>
               <ul class="clean">
                 <li>Corpos pesados tendem para baixo</li>
-                <li>Corpos leves tendem para cima</li>
+                <li class="fragment zoom-in">Corpos leves tendem para cima</li>
               </ul>
             </div>
-            <div class="panel">
+            <div class="panel accent-magenta fragment fade-up">
               <h3 style="color: var(--magenta);">Movimento Violento</h3>
               <ul class="clean">
                 <li>Exige agente externo</li>
-                <li>O repouso era visto como o estado “natural” de muitos corpos</li>
+                <li class="fragment zoom-in">O repouso era visto como o estado “natural” de muitos corpos</li>
               </ul>
             </div>
           </div>
@@ -128,9 +170,9 @@
             <div class="panel accent-cyan">
               <ul class="clean">
                 <li>A teoria parecia compatível com a experiência</li>
-                <li>Não havia instrumentos de medição precisos</li>
-                <li>O atrito mascarava o problema</li>
-                <li>A filosofia aristotélica era intelectualmente poderosa</li>
+                <li class="fragment zoom-in">Não havia instrumentos de medição precisos</li>
+                <li class="fragment zoom-in">O atrito mascarava o problema</li>
+                <li class="fragment zoom-in">A filosofia aristotélica era intelectualmente poderosa</li>
               </ul>
             </div>
             <div class="media-card" style="height: 100%;">
@@ -158,8 +200,8 @@
             <div class="panel accent-magenta">
               <ul class="clean">
                 <li>A flecha segue mesmo depois de deixar o arco.</li>
-                <li>Aristóteles propôs que o meio ajudaria a mantê-la em movimento.</li>
-                <li>Mas essa explicação parecia cada vez mais insatisfatória.</li>
+                <li class="fragment zoom-in">Aristóteles propôs que o meio ajudaria a mantê-la em movimento.</li>
+                <li class="fragment zoom-in">Mas essa explicação parecia cada vez mais insatisfatória.</li>
               </ul>
             </div>
             <div class="media-card">
@@ -201,7 +243,7 @@
       <section id="slide-7" class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">Jean Buridan</div>
-          <div class="portrait-container" style="margin-bottom: 20px;">
+          <div class="portrait-container">
             <div class="portrait-avatar"><img src="images/jean-buridan.webp" alt="Jean Buridan" /></div>
             <h2>A teoria do <em>impetus</em></h2>
           </div>
@@ -209,13 +251,13 @@
             <div class="panel accent-cyan">
               <ul class="clean">
                 <li>O lançador transmite um <em>impetus</em> ao corpo.</li>
-                <li>Esse impetus mantém o movimento.</li>
-                <li>O ar e a resistência o reduzem com o tempo.</li>
+                <li class="fragment zoom-in">Esse <em>impetus</em> mantém o movimento.</li>
+                <li class="fragment zoom-in">O ar e a resistência o reduzem com o tempo.</li>
               </ul>
             </div>
             <div class="panel">
               <div class="quote-block">
-                Não é inércia ainda, mas é um avanço enorme.
+                Não é inércia ainda, mas é um bom avanço!
               </div>
             </div>
           </div>
@@ -231,7 +273,7 @@
       <section id="slide-8" class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">Nicole Oresme</div>
-          <div class="portrait-container" style="margin-bottom: 20px;">
+          <div class="portrait-container">
             <div class="portrait-avatar"><img src="images/nicole-oresme.jpg" alt="Nicole Oresme" /></div>
             <h2>Velocidade pode ser representada</h2>
           </div>
@@ -283,7 +325,7 @@
       <section id="slide-10" class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">Galileu entra em cena</div>
-          <div class="portrait-container" style="margin-bottom: 20px;">
+          <div class="portrait-container">
             <div class="portrait-avatar"><img src="images/galileu.webp" alt="Galileu Galilei" /></div>
             <h2>O movimento vira problema matemático</h2>
           </div>
@@ -308,7 +350,7 @@
       <section id="slide-11" class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">A queda dos corpos</div>
-          <div class="portrait-container" style="margin-bottom: 20px; flex-direction: row-reverse;">
+          <div class="portrait-container" style="flex-direction: row-reverse;">
             <div class="portrait-avatar"><img src="images/pisa.jpg" alt="Torre de Pisa" /></div>
             <h2>Galileu contra o senso comum: corpos caem mais rápido?</h2>
           </div>
@@ -463,7 +505,7 @@
       <section id="slide-17" class="deck-slide">
         <div class="slide-inner">
           <div class="eyebrow">A síntese</div>
-          <div class="portrait-container" style="margin-bottom: 20px;">
+          <div class="portrait-container">
             <div class="portrait-avatar"><img src="images/newton.webp" alt="Isaac Newton" /></div>
             <h2>Newton: a grande unificação do movimento</h2>
           </div>
@@ -700,7 +742,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/math/math.min.js"></script>
   <script>
     Reveal.initialize({
-      margin: 0.09,
+      width: 1280,
+      height: 720,
+      margin: 0.03,
       controls: true,
       progress: true,
       history: false,
